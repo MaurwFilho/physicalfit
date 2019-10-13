@@ -1,0 +1,83 @@
+body {
+	background-image: url("../img/physicalfit2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+body .container{
+    background-color: white;
+    text-align: center;
+    margin-top: 5%;
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+
+}
+
+#in {
+	margin: 2%;
+	text-align: end;
+}
+
+#in a {
+	color: #333;
+}
+
+#login {
+	margin-top: 50px;
+}
+
+#lo{
+	color: grey;
+	font-size: 15px;
+}
+
+#lb {
+	height: 50px;
+	color: #444;
+	margin-top: 10%;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#nome {
+	margin-top: 7px;
+	width: 90%;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: bold;
+	background-color: #ddd;
+	border: none;
+}
+
+#email {
+	margin-top: 7px;
+	width: 90%;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: bold;
+	background-color: #ddd;
+	border: none;
+}
+
+#senha {
+	margin-top: 7px;
+	width: 90%;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: bold;
+	background-color: #ddd;
+	border: none;
+}
+
+#bt {
+	padding: 8px;
+	margin-top: 30px;
+	width: 100px;
+	height: 40px;
+	background-color: #343a40;
+	border-radius: 30px;
+	font-weight: bold;
+	border: none;
+	color: white;
+}

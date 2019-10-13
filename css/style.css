@@ -1,0 +1,25 @@
+body {
+	background-image: url("../img/physicalfit1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+body .container {
+	text-align: center;
+}
+
+body .botao {
+	margin: 10px;
+	position: relative;
+	text-align: center;
+	top: -150px;
+}
+
+#bt {
+	width: 247px;
+	background-color: rgba(255, 255, 255, .2);
+	border-radius: 30px;
+	color: #222;
+	font-size: 20px;
+	font-weight: bold;
+}

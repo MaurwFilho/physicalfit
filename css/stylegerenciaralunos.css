@@ -1,0 +1,167 @@
+header{
+    background-color: #223543;
+    text-align: center;
+    height: 100px;
+}
+
+header h1{
+    height: 100%;
+    color: white;
+    padding: 25px 25px;
+}
+
+body{
+    background-image: url('../img/physicalfit12.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body .container{
+    width: 550px;
+    height: 100%;
+    margin-top: 3%;
+}
+
+#select-nome{
+    border-radius: 30px;
+    height: 35px;
+    width: 400px;
+    margin-top: 3%;
+    margin-left: 5%;
+    border-width: 0;
+}
+
+body .circle{
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 14%;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#nome{
+    border-radius: 30px;
+    height: 35px;
+    width: 400px;
+    margin-top: 3%;
+    margin-left: 5%;
+    background-color: white;
+    border-width: 0;
+
+}
+
+#idade{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 5%;
+    background-color: white;
+    border-width: 0;
+}
+
+#estatura{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 1.5%;
+    background-color: white;
+    border-width: 0;
+}
+
+#peso{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 1.5%;
+    background-color: white;
+    border-width: 0;
+}
+
+#ultimaav{
+    border-radius: 30px;
+    height: 35px;
+    width: 265px;
+    margin-top: 3%;
+    margin-left: 5%;
+    background-color: white;
+    border-width: 0;
+}
+
+#imc{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 1.5%;
+    background-color: white;
+    border-width: 0;
+}
+
+#novaav {
+    margin-top: 6%;
+    margin-left: 5%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#comparar{
+    margin-top: 6%;
+    margin-left: 1.5%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#excluir{
+    margin-top: 6%;
+    margin-left: 1.5%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#treino{
+    margin-top: 1.5%;
+    margin-left: 5%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#exibirmedidas{
+    margin-top: 1.5%;
+    margin-left: 1.5%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#inicio{
+    margin-top: 1.5%;
+    margin-left: 1.5%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#tei{
+    margin-bottom: 10%;
+}

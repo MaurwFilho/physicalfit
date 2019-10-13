@@ -1,0 +1,100 @@
+header{
+    background-color: #223543;
+    text-align: center;
+    height: 100px;
+}
+
+header h1{
+    height: 100%;
+    color: white;
+    padding: 25px 25px;
+}
+
+body{
+    background-image: url('../img/physicalfit7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#voltar{
+    text-align: end;
+    margin-right: 2%;
+    margin-top: 2%;
+    color: white;
+}
+
+#select-treino{
+    border-radius: 30px;
+    height: 35px;
+    width: 400px;
+    margin-left: 2%;
+    border-width: 0;
+}
+
+#adicionar{
+    margin-left: 3%;
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#excluir{
+    border-radius: 30px;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#back{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding-bottom: 3%;
+}
+
+#left{
+    margin-top: 2%;
+    margin-left: 1%;
+    padding-bottom: 9%;
+    border-radius: 10%;
+    background-color: white;
+    text-align: center;
+    filter: opacity(75%);
+}
+
+#mid{
+    margin-top: 2%;
+    margin-left: 1%;
+    padding-bottom: 9%;
+    border-radius: 10%;
+    background-color: white;
+    text-align: center;
+    filter: opacity(75%);
+}
+
+#right{
+    margin-top: 2%;
+    margin-left: 1%;
+    padding-bottom: 9%;
+    border-radius: 10%;
+    background-color: white;
+    text-align: center;
+    filter: opacity(75%);
+}
+
+#comptreino{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    border-width: 0;
+    background-color: gray;
+    font-size: 12px;
+}
+
+
+::-webkit-input-placeholder {
+    color: white;
+ }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gerenciar Alunos</title>
+    <link rel="stylesheet" type="text/css" href="css/stylegerenciaralunos.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="icon" type="imagem/png" href="img/icone.png"/>
+</head>
+<body>
+    <header>
+        <h1 id="physicalfit">PhysicalFit</h1>
+    </header>
+
+    <div class="container float-left">
+    <div class="form-group">
+        <input id="select-nome" type="text" list="nomes">
+        <datalist id="nomes">
+            <option value="Vinicius">
+            <option value="Mauro">
+            <option value="Ragnar">
+        </datalist>
+    </div>
+    
+    <div class="circle">
+        <img src="#" alt="">
+    </div>
+
+    <div>
+        <input type="text" name="nome" id="nome" placeholder="  Nome" disabled>
+    </div>
+
+    <div>
+        <input type="text" name="idade" id="idade" placeholder="  Idade" disabled>
+        <input type="text" name="estatura" id="estatura" placeholder="  Estatura" disabled>
+        <input type="text" name="peso" id="peso" placeholder="  Peso" disabled>
+    </div>
+    <div>
+        <input type="text" name="ultimaav" id="ultimaav" placeholder="  Ultima Avaliação" disabled>
+        <input type="text" name="imc" id="imc" placeholder="  IMC" disabled>
+    </div>
+    <div>
+        <button id="novaav" class="btn btn-dark btn-sm"><a>Nova Avaliação</a></button>
+        <button id="comparar" class="btn btn-dark btn-sm"><a>Comparar</a></button>
+        <button id="excluir" class="btn btn-dark btn-sm"><a>Excluir</a></button>
+    </div>
+    <div id="tei">
+        <button id="treino" class="btn btn-dark btn-sm"><a>Treino</a></button>
+        <button id="exibirmedidas" class="btn btn-dark btn-sm"><a>Exibir Medidas</a></button>
+        <button id="inicio" class="btn btn-dark btn-sm"><a>Início</a></button>
+    </div>
+    </div>
+</body>
+</html>

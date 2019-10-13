@@ -1,0 +1,66 @@
+body{
+    background-image: url("../img/physicalfit4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body .container{
+    background-color: white;
+    text-align: center;
+    margin-top: 5%;
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+}
+
+#email{
+    width: 90%;
+    border-radius: 30px;
+    margin-top: 15%;
+    font-weight: bold;
+    background-color: #ddd;
+    border: none;
+    height: 40px;
+}
+
+#senha{
+    width: 90%;
+    border-radius: 30px;
+    margin-top: 3%;
+    font-weight: bold;
+    background-color: #ddd;
+    border: none;
+    height: 40px;
+}
+
+#bt {
+    padding: 8px;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 30px;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+
+#physicalfit{
+    margin-top: 10%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#esquecisenha{
+    margin-top: 10%;
+    color: gray;
+}
+
+#cadastrar{
+    margin-top: 10%;
+    color: gray;
+}
+
+#inicio{
+    text-align: end;
+    margin-top: 2%;
+    margin-right: 2%;
+}

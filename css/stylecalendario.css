@@ -1,0 +1,69 @@
+header{
+    background-color: #223543;
+    text-align: center;
+    height: 100px;
+}
+
+header h1{
+    height: 100%;
+    color: white;
+    padding: 25px 25px;
+}
+
+body {
+  background-image: url('../img/physicalfit11.jpg');
+  background-size: cover;
+  font-size: 14px;
+}
+
+#calendar {
+  background-color: rgba(255, 255, 255, .9);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+body .float-right{
+    background-color: #D1D1D1;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+body .circle{
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+body .circle img{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#nome {
+    margin-top: 3%;
+    font-size: 20px;
+    color: #353b48;
+}
+
+#bt {
+    margin-top: 10%;
+    padding: 10px;
+    border-radius: 30px;
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+}
+
+#sair{
+    margin-top: 100%;
+}
+
+a{
+    color: white;
+}
