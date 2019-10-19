@@ -17,7 +17,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
 </head>
 
 <body>
-    <form method="post" action="valida_login.php" id="formulario">
+    <form method="post" action="login_valida.php" id="formulario">
         <div id="inicio">
             <a class="btn btn-default btn-sm" href="index.php" style="color: white;">Início</a>
         </div>

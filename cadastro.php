@@ -3,7 +3,7 @@
 $register = isset($_GET['register']) ? $_GET['register'] : 0;
 
 
- ?>
+?>
 
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
 		<a class="btn btn-default btn-sm" href="index.php">Início</a>
 	</div>
 
-	<form method="post" action="registra_professor.php" id="formulario">
+	<form method="post" action="cadastro_professor.php" id="formulario">
 		<div class="container">
 			<label id="lb">PhysicalFit</label>
 			<div>
@@ -41,13 +41,13 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
 			</div>
 			<div>
 				<?php 
-					if ($register == 1) {
-						echo '<font color="#008000"><strong>Cadastrado com sucesso</strong></font>';
-					}
-					if ($register == 2) {
-						echo '<font color="#FF0000"><strong>Não foi possível cadastrar</strong></font>';
-					}
-				 ?>
+				if ($register == 1) {
+					echo '<font color="#008000"><strong>Cadastrado com sucesso</strong></font>';
+				}
+				if ($register == 2) {
+					echo '<font color="#FF0000"><strong>Não foi possível cadastrar</strong></font>';
+				}
+				?>
 			</div>
 		</div>	
 	</form>

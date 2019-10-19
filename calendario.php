@@ -3,9 +3,10 @@
 session_start();
 
 if (!isset($_SESSION['nome'])) {
-	header('Location: login.php');
+	header('Location: index.php');
 }
 
+$nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 
  ?>
 
@@ -85,7 +86,7 @@ if (!isset($_SESSION['nome'])) {
 					<!-- <img src="" alt="Imagem"> -->
 				</div>
 				<div>
-					<label id="nome">Nome</label>
+					<label id="nome"><?= $nome?></label>
 				</div>
 				<div>
 					<a id="bt" class="btn btn-dark btn-sm" href="avaliacaofisica.php">Novo Aluno</a>

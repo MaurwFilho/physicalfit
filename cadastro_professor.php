@@ -2,9 +2,9 @@
 
 require_once("Sql.php");
 
-$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
-$email = isset($_POST['email']) ? $_POST['email'] : "";
-$senha = isset($_POST['senha']) ? $_POST['senha'] : "";
+$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
 
 $sql = new Sql();
 
