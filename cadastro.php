@@ -1,5 +1,13 @@
+<?php 
+
+$register = isset($_GET['register']) ? $_GET['register'] : 0;
+
+
+ ?>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<title>PhysicalFit</title>
@@ -10,10 +18,10 @@
 <body>
 
 	<div id="in">
-		<a href="index.html">Início</a>
+		<a class="btn btn-default btn-sm" href="index.php">Início</a>
 	</div>
 
-	<form method="POST" action="" id="formulario">
+	<form method="post" action="registra_professor.php" id="formulario">
 		<div class="container">
 			<label id="lb">PhysicalFit</label>
 			<div>
@@ -26,10 +34,20 @@
 				<input type="password" name="senha" id="senha" placeholder="  Senha" required>
 			</div>
 			<div class="form-group">
-				<a id="bt" class="btn btn-dark btn-sm" href="login.html">Cadastrar</a>
+				<button type="submit" id="bt" class="btn btn-dark btn-sm">Cadastrar</button>
 			</div>
 			<div id="login" class="form-group">
-				<a id="lo" href="login.html">Login</a>
+				<a id="lo" class="btn btn-default btn-sm" href="login.php">Login</a>
+			</div>
+			<div>
+				<?php 
+					if ($register == 1) {
+						echo '<font color="#008000"><strong>Cadastrado com sucesso</strong></font>';
+					}
+					if ($register == 2) {
+						echo '<font color="#FF0000"><strong>Não foi possível cadastrar</strong></font>';
+					}
+				 ?>
 			</div>
 		</div>	
 	</form>

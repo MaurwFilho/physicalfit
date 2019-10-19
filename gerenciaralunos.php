@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gerenciar Alunos</title>
     <link rel="stylesheet" type="text/css" href="css/stylegerenciaralunos.css">
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
@@ -42,15 +40,18 @@
         <input type="text" name="imc" id="imc" placeholder="  IMC" disabled>
     </div>
     <div>
-        <button id="novaav" class="btn btn-dark btn-sm"><a>Nova Avaliação</a></button>
-        <button id="comparar" class="btn btn-dark btn-sm"><a>Comparar</a></button>
-        <button id="excluir" class="btn btn-dark btn-sm"><a>Excluir</a></button>
+        <a id="novaav" class="btn btn-dark btn-sm" href="avaliacaofisica.php" style="line-height: 25px;">Nova Avaliação</a>
+        <a id="comparar" class="btn btn-dark btn-sm" href="comparar.php" style="padding: 17px;">Comparar</a>
+        <a id="excluir" class="btn btn-dark btn-sm" style="padding: 17px;">Excluir</a>
     </div>
     <div id="tei">
-        <button id="treino" class="btn btn-dark btn-sm"><a>Treino</a></button>
-        <button id="exibirmedidas" class="btn btn-dark btn-sm"><a>Exibir Medidas</a></button>
-        <button id="inicio" class="btn btn-dark btn-sm"><a>Início</a></button>
+        <a id="treino" class="btn btn-dark btn-sm" href="treino.php" style="padding: 17px;">Treino</a>
+        <a id="exibirmedidas" class="btn btn-dark btn-sm" style="line-height: 25px;">Exibir Medidas</a>
+        <a id="inicio" class="btn btn-dark btn-sm" href="calendario.php" style="padding: 17px;">Início</a>
     </div>
     </div>
+
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
