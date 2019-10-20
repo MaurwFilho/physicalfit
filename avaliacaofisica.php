@@ -28,35 +28,33 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
         <h1 id="physicalfit">PhysicalFit</h1>
     </header>
 
-    <form method="post" action="">
-        <form method="post" action="">
+    <form method="post" action="avaliacaofisica_salvar.php">
+        <div class="container" style="margin-top: 20px; text-align: center;">
+            <?php 
+            if ($register == 1) {
+                echo '<font color="#009900"><strong>Salvo com sucesso</strong></font>';
+            }
+            if ($register == 2) {
+                echo '<font color="#FF0000"><strong>Não foi possível salvar avaliação</strong></font>';
+            }
+            ?>
+        </div>
+        <div id="voltar">
+            <a class="btn btn-default btn-sm" href="gerenciaralunos.php">Voltar</a>
+        </div>
+        <div class="container float-left" id="left">
             <div>
-                <?php 
-                if ($register == 1) {
-                    echo '<font color="#008000"><strong>Salvo com sucesso</strong></font>';
-                }
-                if ($register == 2) {
-                    echo '<font color="#FF0000"><strong>Não foi possível salvar avaliação</strong></font>';
-                }
-                ?>
+                <input type="text" name="nome" id="nome" placeholder="  Nome">
             </div>
-            <div id="voltar">
-                <a id="voltar" class="btn btn-default btn-sm" href="calendario.php">Voltar</a>
+            <div style="position: relative;">
+                <input type="text" name="estatura" id="iep" placeholder="  Estatura">
+                <input type="text" name="peso" id="iep" placeholder="  Peso">
+                <input type="text" name="repouso" id="fcrepouso" placeholder="  FC Repouso">
             </div>
-            <div class="container float-left" id="left">
-                <div>
-                    <input type="text" name="nome" id="nome" placeholder="  Nome">
-                </div>
-                <div style="position: relative;">
-                    <input type="text" name="estatura" id="iep" placeholder="  Estatura">
-                    <input type="text" name="peso" id="iep" placeholder="  Peso">
-                    <input type="text" name="fcrepouso" id="fcrepouso" placeholder="  FC Repouso">
-                </div>
-                <div>
-                    <input type="date" name="data" id="data">
-                    <button type="submit" class="btn btn-dark btn-sm" id="ies">Salvar</button>
-                </div>
-            </form>
+            <div>
+                <input type="date" name="nascimento" id="data">
+                <input type="text" name="sexo" id="iep" placeholder="  Sexo">
+            </div>
 
             <div>
                 <label id="perimetros">Perímetros</label>

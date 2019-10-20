@@ -8,11 +8,12 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
-$nome = isset($_POST['nome']) ? $_POST['nome'] : "default name";
-$estatura = isset($_POST['estatura']) ? $_POST['estatura'] : 0;
-$peso = isset($_POST['peso']) ? $_POST['peso'] : 0;
-$repouso = isset($_POST['fcrepouso']) ? $_POST['fcrepouso'] : 0;
-$data = isset($_POST['data']) ? $_POST['data'] : '2000-10-10';
+$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
+$sexo = isset($_POST['sexo']) ? $_POST['sexo'] : null;
+$nascimento = isset($_POST['nascimento']) ? $_POST['nascimento'] : null;
+$estatura = isset($_POST['estatura']) ? $_POST['estatura'] : null;
+$peso = isset($_POST['peso']) ? $_POST['peso'] : null;
+$repouso = isset($_POST['repouso']) ? $_POST['repouso'] : null;
 
 
 $c_pesogordo = isset($_POST['pesogordo']) ? $_POST['pesogordo'] : null;
@@ -43,7 +44,13 @@ $p_cintura = isset($_POST['cintura']) ? $_POST['cintura'] : null;
 
 $sql = new Sql();
 
-$result = $sql->select("CALL avaliacao_insert(:c_pesogordo, :c_tricipital, :c_subscapular, :c_peitoral, :c_abdominal, :c_suprailiaca, :c_coxad, :c_gorduraatual, :c_auxiliarmedia, :c_imc, :c_coxae, :c_pesomagro, :p_bicepsd, :p_bicepse, :p_coxad, :p_coxae, :p_antebracod, :p_antebracoe, :p_panturrilhad, :p_panturrilhae, :p_abdomen, :p_quadril, :p_torax, :p_cintura)", array(
+$result = $sql->select("CALL avaliacao_insert(:nome, :sexo, :nascimento, :estatura, :peso, :repouso, :c_pesogordo, :c_tricipital, :c_subscapular, :c_peitoral, :c_abdominal, :c_suprailiaca, :c_coxad, :c_gorduraatual, :c_auxiliarmedia, :c_imc, :c_coxae, :c_pesomagro, :p_bicepsd, :p_bicepse, :p_coxad, :p_coxae, :p_antebracod, :p_antebracoe, :p_panturrilhad, :p_panturrilhae, :p_abdomen, :p_quadril, :p_torax, :p_cintura)", array(
+	":nome"=>$nome,
+	":sexo"=>$sexo,
+	":nascimento"=>$nascimento,
+	":estatura"=>$estatura,
+	":peso"=>$peso,
+	":repouso"=>$repouso,
 	":c_pesogordo"=>$c_pesogordo,
 	":c_tricipital"=>$c_tricipital,
 	":c_subscapular"=>$c_subscapular,
@@ -72,7 +79,7 @@ $result = $sql->select("CALL avaliacao_insert(:c_pesogordo, :c_tricipital, :c_su
 
 
 if ($result) {
-	header('Location: avalicaofisica.php?register=1');
+	header('Location: avaliacaofisica.php?register=1');
 } else {
 	header('Location: avaliacaofisica.php?register=2');
 }
