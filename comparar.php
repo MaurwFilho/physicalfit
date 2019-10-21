@@ -7,12 +7,13 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
+$conn = mysqli_connect("localhost", "root", "", "physicalfit");
 
+if (!$conn) {
+    die("Falha na conexao: " . mysqli_connect_error());
+}
 
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -34,7 +35,13 @@ if (!isset($_SESSION['nome'])) {
     <div class="form-group" style="padding-bottom: 2%;">
         <input id="select-avaliacao" type="text" list="avaliacoes">
         <datalist id="avaliacoes">
-            <option value="Avaliação dia: 00/00/0000">
+            <?php 
+            $sql = "SELECT * FROM avaliacao";
+            $result = mysqli_query($conn, $sql);
+            while($row = mysqli_fetch_assoc($result)){ 
+                ?>
+                <option value="<?php echo $row['data_avaliacao']; ?>">
+                <?php } ?>
             </datalist>
 
             <input id="select-avaliacao2" type="text" list="avaliacoes">
