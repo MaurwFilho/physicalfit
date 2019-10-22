@@ -2,11 +2,12 @@
 
 session_start();
 
-require_once("Sql.php");
-
 if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
+
+require_once("Sql.php");
+
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
 $sexo = isset($_POST['sexo']) ? $_POST['sexo'] : null;

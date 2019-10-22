@@ -1,11 +1,17 @@
 <?php 
 
+
 session_start();
 
 if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
+$conn = mysqli_connect("localhost", "root", "", "physicalfit");
+
+if (!$conn) {
+    die("Falha na conexao: " . mysqli_connect_error());
+}
 
 ?>
 
@@ -26,126 +32,135 @@ if (!isset($_SESSION['nome'])) {
     <div id="voltar">
         <a id="voltar" class="btn btn-default btn-sm" href="gerenciaralunos.php">Voltar</a>
     </div>
-    <div class="form-group" style="padding-bottom: 2%;">
-        <input id="select-treino" type="text" list="avaliacoes">
-        <datalist id="avaliacoes">
-            <option value="Vinicius">
-            </datalist>
-            <a id="adicionar" class="btn btn-dark btn-sm">Adicionar</a>
-            <a id="excluir" class="btn btn-dark btn-sm">Excluir Treino</a>
-        </div>
-        <div id="back">
+    <form method="post" action="treino_salvar.php">
+        <div class="form-group" style="padding-bottom: 2%;">
+            <input id="select-treino" type="text" list="avaliacoes">
+            <datalist id="avaliacoes">
+                <?php 
+                $sql = "SELECT * FROM aluno";
+                $result = mysqli_query($conn, $sql);
+                while($row = mysqli_fetch_assoc($result)){
+                 ?>
+                 <option value="<?php echo $row['nome']; ?>">
+                 <?php } ?>
+             </datalist>
+
+             <button type="submit" id="adicionar" class="btn btn-dark btn-sm">Adicionar</button>
+             <button id="excluir" class="btn btn-dark btn-sm">Excluir Treino</button>
+         </div>
+         <div id="back">
             <div id="left" class="container">
                 <div>
                     <label style="font-weight: bold;" for="">Treino A</label>
                 </div>
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio1" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes1" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries1" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio2" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes2" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries2" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio3" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes3" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries3" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio4" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes4" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries4" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio5" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes5" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries5" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio6" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes6" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries6" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio7" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes7" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries7" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="aexercicio8" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="arepeticoes8" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="aseries8" id="comptreino" placeholder="  Séries">
             </div>
             <div id="mid" class="container">
                 <div>
                     <label style="font-weight: bold;" for="">Treino B</label>
                 </div>
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio1" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes1" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries1" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio2" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes2" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries2" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio3" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes3" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries3" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio4" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes4" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries4" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio5" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes5" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries5" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio6" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes6" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries6" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio7" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes7" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries7" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="bexercicio8" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="brepeticoes8" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="bseries8" id="comptreino" placeholder="  Séries">
             </div>
             <div id="right" class="container">
                 <div>
                     <label style="font-weight: bold;" for="">Treino C</label>
                 </div>
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio1" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes1" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries1" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio2" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes2" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries2" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio3" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes3" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries3" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio4" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes4" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries4" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio5" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes5" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries5" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio6" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes6" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries6" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio7" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes7" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries7" id="comptreino" placeholder="  Séries">
 
-                <input type="text" name="exercicio" id="comptreino" placeholder="  Exercicio" >
-                <input type="text" name="repeticoes" id="comptreino" placeholder="  Repetições" >
-                <input type="text" name="series" id="comptreino" placeholder="  Séries">
+                <input type="text" name="cexercicio8" id="comptreino" placeholder="  Exercicio" >
+                <input type="text" name="crepeticoes8" id="comptreino" placeholder="  Repetições" >
+                <input type="text" name="cseries8" id="comptreino" placeholder="  Séries">
             </div>
         </div>
+    </form>
 
-        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
-    </body>
-    </html>
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

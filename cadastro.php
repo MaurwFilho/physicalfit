@@ -21,7 +21,7 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
 		<a class="btn btn-default btn-sm" href="index.php">Início</a>
 	</div>
 
-	<form method="post" action="cadastro_professor.php" id="formulario">
+	<form method="post" action="cadastro_valida.php" id="formulario">
 		<div class="container">
 			<label id="lb">PhysicalFit</label>
 			<div>

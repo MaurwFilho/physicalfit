@@ -36,16 +36,16 @@ body{
     border-radius: 30px;
     width: 125px;
     height: 40px;
-    font-weight: bold;
-    line-height: 0;
+    font-size: 15px;
+    color: #fff;
 }
 
 #excluir{
     border-radius: 30px;
     width: 125px;
     height: 40px;
-    font-weight: bold;
-    line-height: 0;
+    color: #fff;
+    font-size: 15px;
 }
 
 #back{
