@@ -19,6 +19,7 @@ if ($result) {
 
 	$_SESSION['nome'] = $result[0]['nome'];
 	$_SESSION['email'] = $result[0]['email'];
+	$_SESSION['id_professor'] = $result[0]['idprofessor'];
 
 	header('Location: calendario.php');
 } else {

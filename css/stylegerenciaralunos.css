@@ -25,10 +25,18 @@ body .container{
 #select-nome{
     border-radius: 30px;
     height: 35px;
-    width: 400px;
+    width: 265px;
     margin-top: 3%;
     margin-left: 5%;
     border-width: 0;
+}
+
+#buscar {
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-bottom: 4px;
+    margin-left: 1.5%;
 }
 
 body .circle{
@@ -39,6 +47,14 @@ body .circle{
     margin-left: 14%;
     margin-top: 15px;
     overflow: hidden;
+}
+
+#lbl {
+    color: grey;
+    height: 35px;
+    width: 400px;
+    margin-left: 5%;
+    font-size: 20px;
 }
 
 #nome{

@@ -47,7 +47,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
             <div>
                 <?php 
                     if ($erro == 1) {
-                        echo '<font color="#FF0000"><strong>Usuário ou senha inválido(s)</strong></font>';
+                        echo '<font color="#FFFF00"><strong>Usuário ou senha inválido(s)</strong></font>';
                     }
                  ?>
             </div>

@@ -8,6 +8,7 @@ if (!isset($_SESSION['nome'])) {
 
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 
+
  ?>
 
 
@@ -89,7 +90,7 @@ $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 					<label id="nome"><?= $nome?></label>
 				</div>
 				<div>
-					<a id="bt" class="btn btn-dark btn-sm" href="avaliacaofisica.php">Novo Aluno</a>
+					<a id="bt" class="btn btn-dark btn-sm" href="novo_aluno.php">Novo Aluno</a>
 				</div>
 				<div>
 					<a id="bt" class="btn btn-dark btn-sm" href="gerenciaralunos.php">Gerenciar Alunos</a>

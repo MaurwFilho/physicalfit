@@ -1,15 +1,20 @@
 <?php 
 
-
 session_start();
 
 if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
-
 $register = isset($_GET['register']) ? $_GET['register'] : 0;
 
+$conn = mysqli_connect("localhost", "root", "", "physicalfit");
+
+if (!$conn) {
+    die("Falha na conexao: " . mysqli_connect_error());
+}
+
+$id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
 
 ?>
 
@@ -44,17 +49,21 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
         </div>
         <div class="container float-left" id="left">
             <div>
-                <input type="text" name="nome" id="nome" placeholder="  Nome">
+                <?php 
+                $sql = "SELECT * FROM aluno WHERE idaluno = $id;";
+                $rs = mysqli_query($conn, $sql);
+                while($row = mysqli_fetch_array($rs)){
+                    $nome = $row['nome'];
+                }
+                ?>
+                <input type="text" name="nome" id="nome" value="<?php if(isset($nome)) echo $nome; ?>" placeholder="  Nome" disabled>
             </div>
             <div style="position: relative;">
                 <input type="text" name="estatura" id="iep" placeholder="  Estatura">
                 <input type="text" name="peso" id="iep" placeholder="  Peso">
                 <input type="text" name="repouso" id="fcrepouso" placeholder="  FC Repouso">
             </div>
-            <div>
-                <input type="date" name="nascimento" id="data">
-                <input type="text" name="sexo" id="iep" placeholder="  Sexo">
-            </div>
+
 
             <div>
                 <label id="perimetros">Perímetros</label>

@@ -8,14 +8,7 @@ if (!isset($_SESSION['nome'])) {
 
 require_once("Sql.php");
 
-
-$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
-$sexo = isset($_POST['sexo']) ? $_POST['sexo'] : null;
-$nascimento = isset($_POST['nascimento']) ? $_POST['nascimento'] : null;
-$estatura = isset($_POST['estatura']) ? $_POST['estatura'] : null;
-$peso = isset($_POST['peso']) ? $_POST['peso'] : null;
-$repouso = isset($_POST['repouso']) ? $_POST['repouso'] : null;
-
+$id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
 
 $c_pesogordo = isset($_POST['pesogordo']) ? $_POST['pesogordo'] : null;
 $c_tricipital = isset($_POST['tricipital']) ? $_POST['tricipital'] : null;
@@ -42,16 +35,14 @@ $p_quadril = isset($_POST['quadril']) ? $_POST['quadril'] : null;
 $p_torax = isset($_POST['torax']) ? $_POST['torax'] : null;
 $p_cintura = isset($_POST['cintura']) ? $_POST['cintura'] : null;
 
+$estatura = isset($_POST['estatura']) ? $_POST['estatura'] : null;
+$peso = isset($_POST['peso']) ? $_POST['peso'] : null;
+$repouso = isset($_POST['repouso']) ? $_POST['repouso'] : null;
+
 
 $sql = new Sql();
 
-$result = $sql->select("CALL avaliacao_insert(:nome, :sexo, :nascimento, :estatura, :peso, :repouso, :c_pesogordo, :c_tricipital, :c_subscapular, :c_peitoral, :c_abdominal, :c_suprailiaca, :c_coxad, :c_gorduraatual, :c_auxiliarmedia, :c_imc, :c_coxae, :c_pesomagro, :p_bicepsd, :p_bicepse, :p_coxad, :p_coxae, :p_antebracod, :p_antebracoe, :p_panturrilhad, :p_panturrilhae, :p_abdomen, :p_quadril, :p_torax, :p_cintura)", array(
-	":nome"=>$nome,
-	":sexo"=>$sexo,
-	":nascimento"=>$nascimento,
-	":estatura"=>$estatura,
-	":peso"=>$peso,
-	":repouso"=>$repouso,
+$result = $sql->select("CALL avaliacao_insert(:c_pesogordo, :c_tricipital, :c_subscapular, :c_peitoral, :c_abdominal, :c_suprailiaca, :c_coxad, :c_gorduraatual, :c_auxiliarmedia, :c_imc, :c_coxae, :c_pesomagro, :p_bicepsd, :p_bicepse, :p_coxad, :p_coxae, :p_antebracod, :p_antebracoe, :p_panturrilhad, :p_panturrilhae, :p_abdomen, :p_quadril, :p_torax, :p_cintura, :estatura, :peso, :repouso, :id)", array(
 	":c_pesogordo"=>$c_pesogordo,
 	":c_tricipital"=>$c_tricipital,
 	":c_subscapular"=>$c_subscapular,
@@ -75,7 +66,11 @@ $result = $sql->select("CALL avaliacao_insert(:nome, :sexo, :nascimento, :estatu
 	":p_abdomen"=>$p_abdomen,
 	":p_quadril"=>$p_quadril,
 	":p_torax"=>$p_torax,
-	":p_cintura"=>$p_cintura
+	":p_cintura"=>$p_cintura,
+	":estatura"=>$estatura,
+	":peso"=>$peso,
+	":repouso"=>$repouso,
+	"id"=>$id
 ));
 
 

@@ -42,10 +42,10 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
 			<div>
 				<?php 
 				if ($register == 1) {
-					echo '<font color="#008000"><strong>Cadastrado com sucesso</strong></font>';
+					echo '<font color="#6495ED"><strong>Cadastrado com sucesso</strong></font>';
 				}
 				if ($register == 2) {
-					echo '<font color="#FF0000"><strong>Não foi possível cadastrar</strong></font>';
+					echo '<font color="#FFFF00"><strong>Não foi possível cadastrar</strong></font>';
 				}
 				?>
 			</div>

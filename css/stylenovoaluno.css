@@ -1,0 +1,97 @@
+header{
+    background-color: #223543;
+    text-align: center;
+    height: 100px;
+}
+
+header h1{
+    height: 100%;
+    color: white;
+    padding: 25px 25px;
+}
+
+body {
+    background-image: url('../img/physicalfit14.jpg');
+    background-size: cover;
+    font-size: 14px;
+}
+
+body .container{
+    background-color: black;
+    opacity: 0.6;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 800px;
+    height: 500px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+input{
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #ddd;
+    border: none;
+    height: 40px;
+    color: gray;
+}
+
+#voltar{
+    text-align: end;
+    margin-right: 2%;
+    margin-top: 2%;
+    color: black;
+}
+
+#nome{
+    margin-top: 5%;
+    width: 605px;
+}
+
+#nascimento{
+    margin-top: 1%;
+    width: 200px;
+}
+
+#celular{
+    width: 200px;
+}
+
+#sexo{
+    width: 200px;
+}
+
+#endereco{
+    margin-top: 1%;
+    width: 605px;
+}
+
+#bairro{
+    margin-top: 1%;
+    width: 405px;
+}
+
+#cep{
+    width: 195px;
+}
+
+#objetivo{
+    margin-top: 1%;
+    width: 605px;
+}
+
+#bt {
+	padding: 8px;
+	margin-top: 30px;
+	width: 300px;
+	height: 40px;
+	background-color: white;
+	border-radius: 30px;
+	font-weight: bold;
+    border: none;
+    color: black;
+}
+
+.float-right{
+    background-color: gray;
+}

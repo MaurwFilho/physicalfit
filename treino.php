@@ -30,7 +30,7 @@ if (!$conn) {
         <h1 id="physicalfit">PhysicalFit</h1>
     </header>
     <div id="voltar">
-        <a id="voltar" class="btn btn-default btn-sm" href="gerenciaralunos.php">Voltar</a>
+        <a id="voltar" class="btn btn-dark btn-sm" href="gerenciaralunos.php">Voltar</a>
     </div>
     <form method="post" action="treino_salvar.php">
         <div class="form-group" style="padding-bottom: 2%;">
