@@ -108,13 +108,13 @@ body .circle{
     border-width: 0;
 }
 
-#imc{
+#excluir{
     border-radius: 30px;
     height: 35px;
     width: 125px;
-    margin-top: 3%;
+    font-weight: bold;
     margin-left: 1.5%;
-    background-color: white;
+    margin-bottom: 6px;
     border-width: 0;
 }
 
@@ -138,14 +138,13 @@ body .circle{
     line-height: 0;
 }
 
-#excluir{
+#exbtreino{
     margin-top: 6%;
     margin-left: 1.5%;
     border-radius: 30px;
     width: 125px;
     height: 40px;
     font-weight: bold;
-    line-height: 0;
 }
 
 #treino{

@@ -66,8 +66,8 @@ $bexercicio6 = isset($_POST['bexercicio6']) ? $_POST['bexercicio6'] : "";
 $brepeticoes6 = isset($_POST['brepeticoes6']) ? $_POST['brepeticoes6'] : "";
 $bseries6 = isset($_POST['bseries6']) ? $_POST['bseries6'] : "";
 
-$brepeticoes7 = isset($_POST['brepeticoes7']) ? $_POST['brepeticoes7'] : "";
 $bexercicio7 = isset($_POST['bexercicio7']) ? $_POST['bexercicio7'] : "";
+$brepeticoes7 = isset($_POST['brepeticoes7']) ? $_POST['brepeticoes7'] : "";
 $bseries7 = isset($_POST['bseries7']) ? $_POST['bseries7'] : "";
 
 $bexercicio8 = isset($_POST['bexercicio8']) ? $_POST['bexercicio8'] : "";
@@ -107,6 +107,87 @@ $cexercicio8 = isset($_POST['cexercicio8']) ? $_POST['cexercicio8'] : "";
 $crepeticoes8 = isset($_POST['crepeticoes8']) ? $_POST['crepeticoes8'] : "";
 $cseries8 = isset($_POST['cseries8']) ? $_POST['cseries8'] : "";
 
+$sql = new Sql();
 
+$result = $sql->select("CALL treino_insert(:aexercicio1, :arepeticoes1, :aseries1, :aexercicio2, :arepeticoes2, :aseries2, :aexercicio3, :arepeticoes3, :aseries3, :aexercicio4, :arepeticoes4, :aseries4, :aexercicio5, :arepeticoes5, :aseries5, :aexercicio6, :arepeticoes6, :aseries6, :aexercicio7, :arepeticoes7, :aseries7, :aexercicio8, :arepeticoes8, :aseries8, :bexercicio1, :brepeticoes1, :bseries1, :bexercicio2, :brepeticoes2, :bseries2, :bexercicio3, :brepeticoes3, :bseries3, :bexercicio4, :brepeticoes4, :bseries4, :bexercicio5, :brepeticoes5, :bseries5, :bexercicio6, :brepeticoes6, :bseries6, :bexercicio7, :brepeticoes7, :bseries7, :bexercicio8, :brepeticoes8, :bseries8, :cexercicio1, :crepeticoes1, :cseries1, :cexercicio2, :crepeticoes2, :cseries2, :cexercicio3, :crepeticoes3, :cseries3, :cexercicio4, :crepeticoes4, :cseries4, :cexercicio5, :crepeticoes5, :cseries5, :cexercicio6, :crepeticoes6, :cseries6, :cexercicio7, :crepeticoes7, :cseries7, :cexercicio8, :crepeticoes8, :cseries8)",array(
+	":aexercicio1"=>$aexercicio1,
+	":arepeticoes1"=>$arepeticoes1,
+	":aseries1"=>$aseries1,
+	":aexercicio2"=>$aexercicio2,
+	":arepeticoes2"=>$arepeticoes2,
+	":aseries2"=>$aseries2,
+	":aexercicio3"=>$aexercicio3,
+	":arepeticoes3"=>$arepeticoes3,
+	":aseries3"=>$aseries3,
+	":aexercicio4"=>$aexercicio4,
+	":arepeticoes4"=>$arepeticoes4,
+	":aseries4"=>$aseries4,
+	":aexercicio5"=>$aexercicio5,
+	":arepeticoes5"=>$arepeticoes5,
+	":aseries5"=>$aseries5,
+	":aexercicio6"=>$aexercicio6,
+	":arepeticoes6"=>$arepeticoes6,
+	":aseries6"=>$aseries6,
+	":aexercicio7"=>$aexercicio7,
+	":arepeticoes7"=>$arepeticoes7,
+	":aseries7"=>$aseries7,
+	":aexercicio8"=>$aexercicio8,
+	":arepeticoes8"=>$arepeticoes8,
+	":aseries8"=>$aseries8,
+	":bexercicio1"=>$bexercicio1,
+	":brepeticoes1"=>$brepeticoes1,
+	":bseries1"=>$bseries1,
+	":bexercicio2"=>$bexercicio2,
+	":brepeticoes2"=>$brepeticoes2,
+	":bseries2"=>$bseries2,
+	":bexercicio3"=>$bexercicio3,
+	":brepeticoes3"=>$brepeticoes3,
+	":bseries3"=>$bseries3,
+	":bexercicio4"=>$bexercicio4,
+	":brepeticoes4"=>$brepeticoes4,
+	":bseries4"=>$bseries4,
+	":bexercicio5"=>$bexercicio5,
+	":brepeticoes5"=>$brepeticoes5,
+	":bseries5"=>$bseries5,
+	":bexercicio6"=>$bexercicio6,
+	":brepeticoes6"=>$brepeticoes6,
+	":bseries6"=>$bseries6,
+	":bexercicio7"=>$bexercicio7,
+	":brepeticoes7"=>$brepeticoes7,
+	":bseries7"=>$bseries7,
+	":bexercicio8"=>$bexercicio8,
+	":brepeticoes8"=>$brepeticoes8,
+	":bseries8"=>$bseries8,
+	":cexercicio1"=>$cexercicio1,
+	":crepeticoes1"=>$crepeticoes1,
+	":cseries1"=>$cseries1,
+	":cexercicio2"=>$cexercicio2,
+	":crepeticoes2"=>$crepeticoes2,
+	":cseries2"=>$cseries2,
+	":cexercicio3"=>$cexercicio3,
+	":crepeticoes3"=>$crepeticoes3,
+	":cseries3"=>$cseries3,
+	":cexercicio4"=>$cexercicio4,
+	":crepeticoes4"=>$crepeticoes4,
+	":cseries4"=>$cseries4,
+	":cexercicio5"=>$cexercicio5,
+	":crepeticoes5"=>$crepeticoes5,
+	":cseries5"=>$cseries5,
+	":cexercicio6"=>$cexercicio6,
+	":crepeticoes6"=>$crepeticoes6,
+	":cseries6"=>$cseries6,
+	":cexercicio7"=>$cexercicio7,
+	":crepeticoes7"=>$crepeticoes7,
+	":cseries7"=>$cseries7,
+	":cexercicio8"=>$cexercicio8,
+	":crepeticoes8"=>$crepeticoes8,
+	":cseries8"=>$cseries8
+));
+
+if ($result) {
+	header('Location: treino.php?register=1');
+} else {
+	header('Location: treino.php?register=2');
+}
 
 ?>

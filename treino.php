@@ -1,11 +1,12 @@
 <?php 
 
-
 session_start();
 
 if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
+
+$register = isset($_GET['register']) ? $_GET['register'] : 0;
 
 $conn = mysqli_connect("localhost", "root", "", "physicalfit");
 
@@ -33,22 +34,33 @@ if (!$conn) {
         <a id="voltar" class="btn btn-dark btn-sm" href="gerenciaralunos.php">Voltar</a>
     </div>
     <form method="post" action="treino_salvar.php">
-        <div class="form-group" style="padding-bottom: 2%;">
-            <input id="select-treino" type="text" list="avaliacoes">
-            <datalist id="avaliacoes">
-                <?php 
-                $sql = "SELECT * FROM aluno";
-                $result = mysqli_query($conn, $sql);
-                while($row = mysqli_fetch_assoc($result)){
-                 ?>
-                 <option value="<?php echo $row['nome']; ?>">
-                 <?php } ?>
-             </datalist>
 
-             <button type="submit" id="adicionar" class="btn btn-dark btn-sm">Adicionar</button>
-             <button id="excluir" class="btn btn-dark btn-sm">Excluir Treino</button>
-         </div>
-         <div id="back">
+        <div class="container" style="margin-top: 20px; text-align: center;">
+            <?php 
+            if ($register == 1) {
+                echo '<font color="#009900"><strong>Salvo com sucesso</strong></font>';
+            }
+            if ($register == 2) {
+                echo '<font color="#FF0000"><strong>Não foi possível salvar treino</strong></font>';
+            }
+            ?>
+        </div>
+
+        <div class="form-group" style="padding-bottom: 2%;">
+
+            <?php 
+            $id = $_SESSION['id_aluno'];
+            $sql = "SELECT * FROM aluno WHERE idaluno = $id;";
+            $rs = mysqli_query($conn, $sql);
+            while($row = mysqli_fetch_array($rs)){
+                $nome = $row['nome'];
+            }
+            ?>
+            <input id="select-treino" type="text" value="Aluno: <?php if(isset($nome)) echo $nome; ?>" disabled style="text-align: center; font-weight: bold;">
+            <input type="submit" id="adicionar" class="btn btn-dark btn-sm" value="Adicionar">
+
+        </div>
+        <div id="back">
             <div id="left" class="container">
                 <div>
                     <label style="font-weight: bold;" for="">Treino A</label>

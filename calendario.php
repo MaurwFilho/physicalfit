@@ -84,7 +84,7 @@ $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 		<div class="col-md-3">
 			<div class="float-right">
 				<div class="circle">
-					<!-- <img src="" alt="Imagem"> -->
+					<!-- <img src="img/logoo.jpg" alt="Imagem"> -->
 				</div>
 				<div>
 					<label id="nome"><?= $nome?></label>

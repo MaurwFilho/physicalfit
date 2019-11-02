@@ -33,7 +33,7 @@ $result = $sql->select("CALL aluno_insert(:nome, :nascimento, :celular, :sexo, :
 	":idprofessor"=>$idprofessor
 ));
 
-$_SESSION['id_aluno'] = $result[0]['professor_idprofessor'];
+$_SESSION['id_aluno'] = $result[0]['idaluno'];
 
 if ($result) {
 	header('Location: avaliacaofisica.php');
