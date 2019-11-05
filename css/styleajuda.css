@@ -1,0 +1,52 @@
+header{
+    background-color: #223543;
+    text-align: center;
+    height: 100px;
+}
+
+header h1{
+    height: 100%;
+    color: white;
+    padding: 25px 25px;
+}
+
+body{
+    background-color: #223543;
+    background-size: cover;
+
+}
+
+body a{
+    color: #333;
+}
+
+#fundo{
+    background-color: #223543;
+    padding-bottom: 15%;
+}
+
+#voltar{
+    text-align: end;
+    margin-right: 2%;
+}
+
+.dialogo{
+    background-color: gray;
+    width: 1315px;
+    height: 600px;
+    margin-left: 15px;
+    border-radius: 5%;
+    
+}
+
+h2{
+    margin-left: 25px;
+    padding-top: 10px;
+    text-align: initial;
+}
+
+p{
+    margin-left: 15px;
+    font-size: 22px;
+}
+

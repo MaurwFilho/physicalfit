@@ -15,7 +15,7 @@
         </header>
         <div id="fundo" class="fundo">
             <div id="voltar">
-                <a id="voltar" href="calendario.php" style="color: white;">Voltar</a>
+                <a id="voltar" class="btn btn-sm" href="calendario.php" style="color: white;">Voltar</a>
             </div>
             <br>
             <br>

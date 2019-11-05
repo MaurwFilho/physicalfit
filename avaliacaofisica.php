@@ -36,18 +36,18 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
     <header>
         <h1 id="physicalfit">PhysicalFit</h1>
     </header>
+    <div style="text-align: center;">
+        <?php 
+        if ($register == 1) {
+            echo '<font color="#444"><strong>SALVO COM SUCESSO</strong></font>';
+        }
+        if ($register == 2) {
+            echo '<font color="#444"><strong>NÃO FOI POSSÍVEL SALVAR AVALIAÇÃO</strong></font>';
+        }
+        ?>
+    </div>
 
     <form method="post" action="avaliacaofisica_salvar.php">
-        <div class="container" style="margin-top: 20px; text-align: center;">
-            <?php 
-            if ($register == 1) {
-                echo '<font color="#009900"><strong>Salvo com sucesso</strong></font>';
-            }
-            if ($register == 2) {
-                echo '<font color="#FF0000"><strong>Não foi possível salvar avaliação</strong></font>';
-            }
-            ?>
-        </div>
         <div id="voltar">
             <a class="btn btn-default btn-sm" href="gerenciaralunos.php">Voltar</a>
         </div>
@@ -66,6 +66,7 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
                 <input type="text" name="estatura" id="iep" placeholder="  Estatura">
                 <input type="text" name="peso" id="iep" placeholder="  Peso">
                 <input type="text" name="repouso" id="fcrepouso" placeholder="  FC Repouso">
+                <button type="submit" class="btn btn-dark btn-sm" id="ies">Salvar</button>
             </div>
 
 
@@ -92,7 +93,7 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
                 <input type="text" name="auxiliarmedia" id="taa" placeholder="  Auxiliar Média">
             </div>
             <div>
-                <input type="text" name="coxad" id="cpt" placeholder="  Coxa Direira">
+                <input type="text" name="pcoxad" id="cpt" placeholder="  Coxa Direira">
                 <input type="text" name="panturrilhad" id="cpt" placeholder="  Panturrilha Direita">
                 <input type="text" name="torax" id="cpt" placeholder="  Torax"> 
 
@@ -101,16 +102,15 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
                 <input type="text" name="imc" id="ssi" placeholder="  IMC">
             </div>
             <div>
-                <input type="text" name="coxae" id="cpa" placeholder="  Coxa Esquerda">
+                <input type="text" name="pcoxae" id="cpa" placeholder="  Coxa Esquerda">
                 <input type="text" name="panturrilhae" id="cpa" placeholder="  Panturrilha Esquerda">
                 <input type="text" name="cintura" id="cpa" placeholder="  Cintura">
 
                 <input type="text" name="peitoral" id="pcc" placeholder="  Peitoral" style="margin-left: 35px;">
-                <input type="text" name="coxad" id="pcc" placeholder="  Coxa Direita">
-                <input type="text" name="coxae" id="pcc" placeholder="  Coxa Esquerda"> 
+                <input type="text" name="ccoxad" id="pcc" placeholder="  Coxa Direita">
+                <input type="text" name="ccoxae" id="pcc" placeholder="  Coxa Esquerda">
             </div>
         </div>
-        <button type="submit" class="btn btn-dark btn-sm" id="ies" style="margin-top: 418px;">Salvar</button>
     </form>
 
     <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>

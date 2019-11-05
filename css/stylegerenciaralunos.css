@@ -22,10 +22,45 @@ body .container{
     margin-top: 3%;
 }
 
+#voltar{
+    text-align: end;
+    margin-right: 2%;
+    margin-top: 10px;
+}
+
+#left{
+    width: 550px;
+    height: 100%;
+    margin-top: 3%;
+}
+
+#right{
+    width: 550px;
+    height: 100%;
+    margin-top: 7%;
+    margin-right: 5%;
+    padding-bottom: 5%;
+    background-color: white;
+    filter: opacity(70%);
+    text-align: center;
+    border-radius: 10%;
+    border-width: 7px;
+    border-color: black;
+}
+
 #select-nome{
     border-radius: 30px;
     height: 35px;
     width: 265px;
+    margin-top: 3%;
+    margin-left: 5%;
+    border-width: 0;
+}
+
+#select-avaliacao{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
     margin-top: 3%;
     margin-left: 5%;
     border-width: 0;
@@ -179,4 +214,100 @@ body .circle{
 
 #tei{
     margin-bottom: 10%;
+}
+
+#ppg{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: black;
+    font-size: 12px;
+    color: white;
+}
+
+#taa{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 1%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: black;
+    font-size: 12px;
+    color: white;
+}
+
+#ssi{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 1%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: black; 
+    font-size: 12px;
+    color: white;
+}
+
+#pcc{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 1%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: black; 
+    font-size: 12px;
+    color: white;
+}
+
+#baa{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: darkblue; 
+    font-size: 12px;
+    color: white;
+}
+
+#baq{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 1%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: darkblue;
+    font-size: 12px;
+    color: white;
+}
+
+#cpf{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 1%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: darkblue; 
+    font-size: 12px;
+    color: white;
+}
+
+#cpp{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 1%;
+    margin-left: 5%;
+    border-width: 0;
+    background-color: darkblue;
+    font-size: 12px;
+    color: white;
 }

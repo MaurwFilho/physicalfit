@@ -18,8 +18,8 @@ body{
 
 #voltar{
     text-align: end;
+    margin-top: 10px;
     margin-right: 2%;
-    margin-top: 2%;
     color: black;
 }
 
@@ -39,7 +39,6 @@ body{
     height: 35px;
     width: 440px;
     margin-right: 2%;
-    margin-top: 3%;
     background-color: white;
 }
 
