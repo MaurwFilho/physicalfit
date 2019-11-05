@@ -83,10 +83,10 @@ $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 		</div>
 		<div class="col-md-3">
 			<div class="float-right">
-				<div class="circle">
-					<!-- <img src="img/logoo.jpg" alt="Imagem"> -->
-				</div>
-				<div>
+				<!-- <div class="circle">
+					<img src="img/logoo.jpg" alt="Imagem">
+				</div> -->
+				<div style="margin-top: 50px;">
 					<label id="nome"><?= $nome?></label>
 				</div>
 				<div>
@@ -99,7 +99,7 @@ $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 					<a id="bt" class="btn btn-dark btn-sm" href="sair.php">Sair</a>
 				</div>
 				<div id="sair">
-					<a class="btn btn-default btn-sm" href="#">Ajuda</a>
+					<a class="btn btn-default btn-sm" href="ajuda.php">Ajuda</a>
 				</div>
 			</div>
 		</div>

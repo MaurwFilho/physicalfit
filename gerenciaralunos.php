@@ -1,6 +1,5 @@
 <?php 
 
-
 session_start();
 
 if (!isset($_SESSION['nome'])) {
@@ -66,7 +65,7 @@ if (isset($_POST['excluir'])) {
 
     <form action="#" method="post">
         <div class="container float-left">
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom: 80px;">
 
                 <label id="lbl">Selecione um aluno</label>
 
@@ -85,9 +84,9 @@ if (isset($_POST['excluir'])) {
             </div>
 
 
-            <div class="circle">
+            <!-- <div class="circle">
                 <img src="" alt="Imagem">
-            </div>
+            </div> -->
 
             <div>
                 <input type="text" name="nome" id="nome" value="<?php if(isset($nome)) echo $nome; ?>" placeholder="  Nome" disabled>
@@ -106,7 +105,7 @@ if (isset($_POST['excluir'])) {
             <div>
                 <a id="novaav" class="btn btn-dark btn-sm" href="avaliacaofisica.php" style="line-height: 25px;">Nova Avaliação</a>
                 <a id="comparar" class="btn btn-dark btn-sm" href="comparar.php" style="padding: 17px;">Comparar</a>
-                <a id="exbtreino" class="btn btn-dark btn-sm">Exibe Treino</a>
+                <a id="exbtreino" class="btn btn-dark btn-sm" href="treino_exibe.php" style="line-height: 25px;">Exibe Treino</a>
             </div>
             <div id="tei">
                 <a id="treino" class="btn btn-dark btn-sm" href="treino.php" style="padding: 17px;">Novo Treino</a>

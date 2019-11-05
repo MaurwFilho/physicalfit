@@ -7,6 +7,10 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
+if (!isset($_SESSION['id_aluno'])) {
+    header('Location: gerenciaralunos.php');
+}
+
 $conn = mysqli_connect("localhost", "root", "", "physicalfit");
 
 if (!$conn) {

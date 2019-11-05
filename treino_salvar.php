@@ -107,9 +107,22 @@ $cexercicio8 = isset($_POST['cexercicio8']) ? $_POST['cexercicio8'] : "";
 $crepeticoes8 = isset($_POST['crepeticoes8']) ? $_POST['crepeticoes8'] : "";
 $cseries8 = isset($_POST['cseries8']) ? $_POST['cseries8'] : "";
 
+$id = $_SESSION['id_aluno'];
+
 $sql = new Sql();
 
-$result = $sql->select("CALL treino_insert(:aexercicio1, :arepeticoes1, :aseries1, :aexercicio2, :arepeticoes2, :aseries2, :aexercicio3, :arepeticoes3, :aseries3, :aexercicio4, :arepeticoes4, :aseries4, :aexercicio5, :arepeticoes5, :aseries5, :aexercicio6, :arepeticoes6, :aseries6, :aexercicio7, :arepeticoes7, :aseries7, :aexercicio8, :arepeticoes8, :aseries8, :bexercicio1, :brepeticoes1, :bseries1, :bexercicio2, :brepeticoes2, :bseries2, :bexercicio3, :brepeticoes3, :bseries3, :bexercicio4, :brepeticoes4, :bseries4, :bexercicio5, :brepeticoes5, :bseries5, :bexercicio6, :brepeticoes6, :bseries6, :bexercicio7, :brepeticoes7, :bseries7, :bexercicio8, :brepeticoes8, :bseries8, :cexercicio1, :crepeticoes1, :cseries1, :cexercicio2, :crepeticoes2, :cseries2, :cexercicio3, :crepeticoes3, :cseries3, :cexercicio4, :crepeticoes4, :cseries4, :cexercicio5, :crepeticoes5, :cseries5, :cexercicio6, :crepeticoes6, :cseries6, :cexercicio7, :crepeticoes7, :cseries7, :cexercicio8, :crepeticoes8, :cseries8)",array(
+$rs = $sql->select("SELECT idtreino FROM treino WHERE aluno_idaluno = $id");
+
+if ($rs) {
+	$idt = $rs[0]['idtreino'];
+	$sql->query("DELETE FROM treinoa WHERE treino_idtreino = $idt;");
+	$sql->query("DELETE FROM treinob WHERE treino_idtreino = $idt;");
+	$sql->query("DELETE FROM treinoc WHERE treino_idtreino = $idt;");
+	$sql->query("DELETE FROM treino WHERE idtreino = $idt;");
+}
+
+$result = $sql->select("CALL treino_insert(:id, :aexercicio1, :arepeticoes1, :aseries1, :aexercicio2, :arepeticoes2, :aseries2, :aexercicio3, :arepeticoes3, :aseries3, :aexercicio4, :arepeticoes4, :aseries4, :aexercicio5, :arepeticoes5, :aseries5, :aexercicio6, :arepeticoes6, :aseries6, :aexercicio7, :arepeticoes7, :aseries7, :aexercicio8, :arepeticoes8, :aseries8, :bexercicio1, :brepeticoes1, :bseries1, :bexercicio2, :brepeticoes2, :bseries2, :bexercicio3, :brepeticoes3, :bseries3, :bexercicio4, :brepeticoes4, :bseries4, :bexercicio5, :brepeticoes5, :bseries5, :bexercicio6, :brepeticoes6, :bseries6, :bexercicio7, :brepeticoes7, :bseries7, :bexercicio8, :brepeticoes8, :bseries8, :cexercicio1, :crepeticoes1, :cseries1, :cexercicio2, :crepeticoes2, :cseries2, :cexercicio3, :crepeticoes3, :cseries3, :cexercicio4, :crepeticoes4, :cseries4, :cexercicio5, :crepeticoes5, :cseries5, :cexercicio6, :crepeticoes6, :cseries6, :cexercicio7, :crepeticoes7, :cseries7, :cexercicio8, :crepeticoes8, :cseries8)",array(
+	":id"=>$id,
 	":aexercicio1"=>$aexercicio1,
 	":arepeticoes1"=>$arepeticoes1,
 	":aseries1"=>$aseries1,

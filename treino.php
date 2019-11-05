@@ -6,6 +6,10 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
+if (!isset($_SESSION['id_aluno'])) {
+    header('Location: gerenciaralunos.php');
+}
+
 $register = isset($_GET['register']) ? $_GET['register'] : 0;
 
 $conn = mysqli_connect("localhost", "root", "", "physicalfit");
@@ -30,21 +34,20 @@ if (!$conn) {
     <header>
         <h1 id="physicalfit">PhysicalFit</h1>
     </header>
+    <div style="text-align: center;">
+        <?php 
+        if ($register == 1) {
+            echo '<font color="#DDD"><strong>SALVO COM SUCESSO</strong></font>';
+        }
+        if ($register == 2) {
+            echo '<font color="#DDD"><strong>NÃO FOI POSSIVEL SALVAR O TREINO</strong></font>';
+        }
+        ?>
+    </div>
     <div id="voltar">
         <a id="voltar" class="btn btn-dark btn-sm" href="gerenciaralunos.php">Voltar</a>
     </div>
     <form method="post" action="treino_salvar.php">
-
-        <div class="container" style="margin-top: 20px; text-align: center;">
-            <?php 
-            if ($register == 1) {
-                echo '<font color="#009900"><strong>Salvo com sucesso</strong></font>';
-            }
-            if ($register == 2) {
-                echo '<font color="#FF0000"><strong>Não foi possível salvar treino</strong></font>';
-            }
-            ?>
-        </div>
 
         <div class="form-group" style="padding-bottom: 2%;">
 

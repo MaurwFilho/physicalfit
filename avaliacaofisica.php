@@ -6,6 +6,10 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
+if (!isset($_SESSION['id_aluno'])) {
+    header('Location: gerenciaralunos.php');
+}
+
 $register = isset($_GET['register']) ? $_GET['register'] : 0;
 
 $conn = mysqli_connect("localhost", "root", "", "physicalfit");
