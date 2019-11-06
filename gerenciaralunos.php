@@ -28,13 +28,19 @@ if (isset($_POST['buscar'])) {
         while($row = mysqli_fetch_array($result)){
             $nome = $row['nome'];
             $nascimento = $row['nascimento'];
+            $nascimento = date( 'd-m-Y' , strtotime( $nascimento ) );
+            $objetivo = $row['objetivo'];
+            $sexo = $row['sexo'];
         }
         $query = "SELECT * FROM avaliacao WHERE aluno_idaluno = $id ORDER BY idavaliacao DESC LIMIT 1;";
         $rs = mysqli_query($conn, $query);
         while($row = mysqli_fetch_array($rs)){
             $ultava = $row['data_avaliacao'];
+            $ultava = date( 'd-m-Y' , strtotime( $ultava ) );
             $estatura = $row['estatura'];
+            $estatura = str_replace('.', ',', $estatura);
             $peso = $row['peso'];
+            $peso = str_replace('.', ',', $peso);
         }
     }
 }
@@ -149,7 +155,7 @@ if (isset($_POST['exbmedidas'])) {
 
     <form action="#" method="post">
         <div class="container float-left">
-            <div class="form-group" style="margin-bottom: 80px;">
+            <div class="form-group" style="margin-bottom: 20px;">
 
                 <label id="lbl">Selecione um aluno</label>
 
@@ -161,7 +167,8 @@ if (isset($_POST['exbmedidas'])) {
 
                     <?php while($row = mysqli_fetch_array($result)){ ?>
                         <option value="<?php echo $row['idaluno'] ?>"><?php echo $row['nome'] ?></option>
-                    <?php } ?>
+                    <?php }
+                    ?>
                 </select>
                 <input type="submit" id="buscar" class="btn btn-dark btn-sm" name="buscar" value="Selecionar">
 
@@ -172,17 +179,21 @@ if (isset($_POST['exbmedidas'])) {
             </div> -->
 
             <div>
-                <input type="text" name="nome" id="nome" value="<?php if(isset($nome)) echo $nome; ?>" placeholder="  Nome" disabled>
+                <input type="text" id="nome" value="<?php if(isset($nome)) echo "  ".$nome ?>" placeholder="  Nome" disabled>
             </div>
 
             <div>
-                <input type="text" name="idade" id="idade" value="<?php if(isset($nascimento)) echo $nascimento; ?>" placeholder="  Nascimento" disabled>
-                <input type="text" name="estatura" id="estatura" value="<?php if(isset($estatura)) echo $estatura; ?>" placeholder="  Estatura" disabled>
-                <input type="text" name="peso" id="peso" value="<?php if(isset($peso)) echo$peso ?>" placeholder="  Peso" disabled>
+                <input type="text" id="idade" value="<?php if(isset($nascimento)) echo "  ".$nascimento ?>" placeholder="  Nascimento" disabled>
+                <input type="text" id="estatura" value="<?php if(isset($estatura)) echo "  ".$estatura ?>" placeholder="  Estatura" disabled>
+                <input type="text" id="peso" value="<?php if(isset($peso)) echo "  ".$peso ?>" placeholder="  Peso" disabled>
             </div>
             <div>
-                <input type="text" name="ultimaav" id="ultimaav" value="<?php if(isset($ultava)) echo $ultava; ?>" placeholder="  Ultima Avaliação" disabled>
-                <input <?php if(!isset($nome)) echo "hidden" ?> type="submit" id="excluir" class="btn btn-dark btn-sm" name="excluir" value="Excluir Aluno" onclick="return confirm('Quer mesmo excluir este aluno?')">
+                <input type="text" id="objetivo" value="<?php if(isset($objetivo)) echo "  ".$objetivo ?>" placeholder="  Objetivo" disabled>
+                <input type="text" id="sexo" value="<?php if(isset($sexo)) echo "  ".$sexo ?>" placeholder="  Sexo" disabled>
+            </div>
+            <div>
+                <input type="text" id="ultimaav" value="<?php if(isset($ultava)) echo "  ".$ultava ?>" placeholder="  Ultima Avaliação" disabled>
+                <input <?php if(!isset($nome)) echo "hidden" ?> type="submit" id="excluir" class="btn btn-dark btn-sm" value="Excluir Aluno" onclick="return confirm('Quer mesmo excluir este aluno?')">
             </div>
 
             <div>
@@ -212,8 +223,9 @@ if (isset($_POST['exbmedidas'])) {
                     ?>
 
                     <?php while($row = mysqli_fetch_array($result)){ ?>
-                        <option value="<?php echo $row['idavaliacao'] ?>"><?php echo $row['data_avaliacao'] ?></option>
-                    <?php } ?>
+                        <option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y' , strtotime( $row['data_avaliacao'] ) )  ?></option>
+                    <?php }
+                    ?>
                 </select>
                 <input type="submit" id="buscar" class="btn btn-dark btn-sm" name="buscar_avaliacao" value="Buscar" style="background-color: black;">
             </div>

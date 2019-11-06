@@ -44,12 +44,9 @@ if (!$conn) {
         }
         ?>
     </div>
-    <div id="voltar">
-        <a id="voltar" class="btn btn-dark btn-sm" href="gerenciaralunos.php">Voltar</a>
-    </div>
     <form method="post" action="treino_salvar.php">
 
-        <div class="form-group" style="padding-bottom: 2%;">
+        <div style="padding-bottom: 1%; margin-top: 20px;">
 
             <?php 
             $id = $_SESSION['id_aluno'];
@@ -61,7 +58,7 @@ if (!$conn) {
             ?>
             <input id="select-treino" type="text" value="Aluno: <?php if(isset($nome)) echo $nome; ?>" disabled style="text-align: center; font-weight: bold;">
             <input type="submit" id="adicionar" class="btn btn-dark btn-sm" value="Adicionar">
-
+            <a id="voltar" class="btn btn-dark btn-sm float-right" href="gerenciaralunos.php">Voltar</a>
         </div>
         <div id="back">
             <div id="left" class="container">

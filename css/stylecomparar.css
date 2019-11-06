@@ -16,17 +16,30 @@ body{
     background-size: cover;
 }
 
+body form{
+    margin-top: 5px;
+}
+
+#nome{
+    border-radius: 30px;
+    height: 35px;
+    width: 547px;
+    margin-left: 2%;
+    border-width: 0;
+    margin-top: 35px;
+}
+
 #voltar{
     text-align: end;
-    margin-right: 2%;
-    margin-top: 2%;
+    margin-right: 10px;
+    margin-top: 5px;
     color: white;
 }
 
 #select-avaliacao{
     border-radius: 30px;
     height: 35px;
-    width: 400px;
+    width: 265px;
     margin-left: 2%;
     border-width: 0;
 }
@@ -34,8 +47,8 @@ body{
 #select-avaliacao2{
     border-radius: 30px;
     height: 35px;
-    width: 400px;
-    margin-left: 3%;
+    width: 265px;
+    margin-left: 1%;
     border-width: 0;
 }
 
@@ -43,6 +56,7 @@ body{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     padding-bottom: 3%;
+    margin-top: 20px;
 }
 
 #left{
@@ -83,6 +97,8 @@ body{
     border-width: 0;
     background-color: gray;
     font-size: 12px;
+    font-weight: bold;
+    color: white;
 }
 
 #compmid{
@@ -93,6 +109,8 @@ body{
     border-width: 0;
     background-color: gray;
     font-size: 12px;
+    font-weight: bold;
+    color: white;
 }
 
 #compright{
@@ -103,8 +121,18 @@ body{
     border-width: 0;
     background-color: gray;
     font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+#comparar {
+    border-radius: 30px;
+    height: 38px;
+    width: 125px;
+    margin-left: 1.5%;
+    margin-bottom: 3px;
 }
 
 ::-webkit-input-placeholder {
     color: white;
- }
+}

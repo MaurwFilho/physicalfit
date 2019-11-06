@@ -19,7 +19,7 @@ body{
 body .container{
     width: 550px;
     height: 100%;
-    margin-top: 3%;
+    margin-top: 1%;
 }
 
 #voltar{
@@ -133,7 +133,27 @@ body .circle{
     border-width: 0;
 }
 
+#sexo{
+    border-radius: 30px;
+    height: 35px;
+    width: 125px;
+    margin-top: 3%;
+    margin-left: 1.5%;
+    background-color: white;
+    border-width: 0;
+}
+
 #ultimaav{
+    border-radius: 30px;
+    height: 35px;
+    width: 265px;
+    margin-top: 3%;
+    margin-left: 5%;
+    background-color: white;
+    border-width: 0;
+}
+
+#objetivo{
     border-radius: 30px;
     height: 35px;
     width: 265px;
@@ -226,6 +246,7 @@ body .circle{
     background-color: black;
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #taa{
@@ -238,6 +259,7 @@ body .circle{
     background-color: black;
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #ssi{
@@ -250,6 +272,7 @@ body .circle{
     background-color: black; 
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #pcc{
@@ -262,6 +285,7 @@ body .circle{
     background-color: black; 
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #baa{
@@ -274,6 +298,7 @@ body .circle{
     background-color: darkblue; 
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #baq{
@@ -286,6 +311,7 @@ body .circle{
     background-color: darkblue;
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #cpf{
@@ -298,6 +324,7 @@ body .circle{
     background-color: darkblue; 
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }
 
 #cpp{
@@ -310,4 +337,5 @@ body .circle{
     background-color: darkblue;
     font-size: 12px;
     color: white;
+    font-weight: bold;
 }

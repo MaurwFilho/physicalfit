@@ -36,7 +36,9 @@ $p_torax = isset($_POST['torax']) ? $_POST['torax'] : null;
 $p_cintura = isset($_POST['cintura']) ? $_POST['cintura'] : null;
 
 $estatura = isset($_POST['estatura']) ? $_POST['estatura'] : null;
+$estatura = str_replace(',', '.', $estatura);
 $peso = isset($_POST['peso']) ? $_POST['peso'] : null;
+$peso = str_replace(',', '.', $peso);
 $repouso = isset($_POST['repouso']) ? $_POST['repouso'] : null;
 
 

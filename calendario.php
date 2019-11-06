@@ -6,10 +6,10 @@ if (!isset($_SESSION['nome'])) {
 	header('Location: index.php');
 }
 
-$nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
+$nome = $_SESSION['nome'];
 
 
- ?>
+?>
 
 
 <!DOCTYPE html>

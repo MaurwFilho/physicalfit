@@ -167,12 +167,9 @@ if(isset($_POST['excluir'])) {
         }
         ?>
     </div>
-    <div id="voltar">
-        <a id="voltar" class="btn btn-dark btn-sm" href="gerenciaralunos.php">Voltar</a>
-    </div>
+    
     <form method="post" action="#">
-
-        <div class="form-group" style="padding-bottom: 2%;">
+        <div style="padding-bottom: 2%; margin-top: 20px;">
 
             <?php 
             $id = $_SESSION['id_aluno'];
@@ -184,6 +181,7 @@ if(isset($_POST['excluir'])) {
             ?>
             <input id="select-treino" type="text" value="Aluno: <?php if(isset($nome)) echo $nome; ?>" disabled style="text-align: center; font-weight: bold;">
             <input <?php if($del == 2 || $del == 1) echo "hidden" ?> type="submit" id="adicionar" name="excluir" class="btn btn-dark btn-sm" value="Excluir" onclick="return confirm('Quer excluir este treino?')">
+            <a id="voltar" class="btn btn-dark btn-sm float-right" href="gerenciaralunos.php">Voltar</a>
 
         </div>
         <div id="back">

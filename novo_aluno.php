@@ -25,6 +25,15 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
     <header>
         <h1 id="physicalfit">PhysicalFit</h1>
     </header>
+
+    <div style="text-align: center;">
+        <?php 
+        if ($erro == 1) {
+            echo '<font color="#444"><strong>ERRO AO SALVAR ALUNO</strong></font>';
+        }
+        ?>
+    </div>
+
     <div id="voltar">
         <a class="btn btn-default btn-sm" href="calendario.php">Voltar</a>
     </div>
@@ -32,18 +41,18 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
     <form method="post" action="novo_aluno_salvar.php">
         <div class="row">   
             <div class="container">
-                <?php 
-                if ($erro == 1) {
-                    echo '<font color="#FFFF00"><strong>Erro ao salvar aluno</strong></font>';
-                }
-                ?>
                 <div>
                     <input type="name" name="nome" id="nome" placeholder="  Nome Completo" required>
                 </div>
                 <div>
                     <input type="date" name="nascimento" id="nascimento" placeholder="  Data de Nascimento" required>
                     <input type="text" name="celular" id="celular" placeholder="  Celular" required>
-                    <input type="text" name="sexo" id="sexo" placeholder="  Sexo">
+                    <!-- <input type="text" name="sexo" id="sexo" placeholder="  Sexo"> -->
+                    <label id="sexo">Sexo</label>
+                    <input type="radio" name="sexo" id="masculino" value="masculino">
+                    <label for="sexo" id="sexo">Masculino</label>
+                    <input type="radio" name="sexo" id="feminino" value="feminino">
+                    <label for="sexo" id="sexo">Feminino</label>
                 </div>
                 <div>
                     <input type="text" name="endereco" id="endereco" placeholder="  Endereço" required>

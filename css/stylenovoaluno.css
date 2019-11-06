@@ -50,7 +50,7 @@ input{
 
 #nascimento{
     margin-top: 1%;
-    width: 200px;
+    width: 185px;
 }
 
 #celular{
@@ -58,7 +58,15 @@ input{
 }
 
 #sexo{
-    width: 200px;
+    color: white;
+}
+
+#masculino{
+    height: 10px;
+}
+
+#feminino{
+    height: 10px;
 }
 
 #endereco{
