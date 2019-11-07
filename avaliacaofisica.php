@@ -12,11 +12,7 @@ if (!isset($_SESSION['id_aluno'])) {
 
 $register = isset($_GET['register']) ? $_GET['register'] : 0;
 
-$conn = mysqli_connect("localhost", "root", "", "physicalfit");
-
-if (!$conn) {
-    die("Falha na conexao: " . mysqli_connect_error());
-}
+require_once("conexao.php");
 
 $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
 

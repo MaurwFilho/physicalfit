@@ -6,11 +6,7 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
-$conn = mysqli_connect("localhost", "root", "", "physicalfit");
-
-if (!$conn) {
-    die("Falha na conexao: " . mysqli_connect_error());
-}
+require_once("conexao.php");
 
 require_once("Sql.php");
 
