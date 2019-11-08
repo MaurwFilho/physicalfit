@@ -2,6 +2,10 @@
 
 session_start();
 
+if (!isset($_SESSION['nome'])) {
+	header('Location: index.php');
+}
+
 require_once("Sql.php");
 $idprofessor = $_SESSION['id_professor'];
 
@@ -16,7 +20,13 @@ $data_end = str_replace('/', '-', $dados['end']);
 $data_end_conv = date("Y-m-d H:i:s", strtotime($data_end));
 
 $sql = new Sql();
-$rs = $sql->query("INSERT INTO events (title,color,start,end,professor_idprofessor) VALUES ($title, $color, $data_start_conv, $data_end_conv, $idprofessor);");
+$rs = $sql->select("CALL events_insert(:title, :color, :start, :end, :id)", array(
+	":title"=>$title,
+	":color"=>$color,
+	":start"=>$data_start_conv,
+	":end"=>$data_end_conv,
+	":id"=>$idprofessor
+));
 
 if ($rs) {
 	$retorna = ['sit' => true, 'msg' => '<div class="alert alert-success" role="alert">Evento cadastrado com sucesso!</div>'];

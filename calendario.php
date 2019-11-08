@@ -28,10 +28,14 @@ $nome = $_SESSION['nome'];
 
 	<link href='packages/core/main.min.css' rel='stylesheet' />
 	<link href='packages/daygrid/main.min.css' rel='stylesheet' />
+	<link href='packages/timegrid/main.css' rel='stylesheet' />
+	<link href='packages/list/main.css' rel='stylesheet' />
 
 	<script src='packages/core/main.min.js'></script>
 	<script src='packages/interaction/main.min.js'></script>
 	<script src='packages/daygrid/main.min.js'></script>
+	<script src='packages/timegrid/main.js'></script>
+	<script src='packages/list/main.js'></script>
 	<script src='packages/core/locales/pt-br.js'></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -44,29 +48,34 @@ $nome = $_SESSION['nome'];
 
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				locale: 'pt-br',
-				plugins: [ 'interaction', 'dayGrid' ],
+				plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+				header: {
+					left: 'prevYear,prev,next,nextYear today',
+					center: 'title',
+					right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+				},
 				editable: true,
-      			eventLimit: true,
-      			events: [
-      				<?php 
-      					while($row = mysqli_fetch_array($rs)) {
-      						?>
-      						{
-      						id: '<?php echo $row['id'] ?>',
-      						title: '<?php echo $row['title'] ?>',
-      						color: '<?php echo $row['color'] ?>',
-      						start: '<?php echo $row['start'] ?>',
-      						end: '<?php echo $row['end'] ?>',
-      						},<?php
-      					}
-      				 ?>
-      			],
-      			extraParams: function () {
-      				return {
-      					cachebuster: new Date().valueOf()
-    				};
-      			},
-      			eventClick: function(info) {
+				eventLimit: true,
+				events: [
+				<?php 
+				while($row = mysqli_fetch_array($rs)) {
+					?>
+					{
+						id: '<?php echo $row['id'] ?>',
+						title: '<?php echo $row['title'] ?>',
+						color: '<?php echo $row['color'] ?>',
+						start: '<?php echo $row['start'] ?>',
+						end: '<?php echo $row['end'] ?>',
+					},<?php
+				}
+				?>
+				],
+				extraParams: function () {
+					return {
+						cachebuster: new Date().valueOf()
+					};
+				},
+				eventClick: function(info) {
 					info.jsEvent.preventDefault();
 
 					$('#visualizar #id').text(info.event.id);
@@ -74,6 +83,10 @@ $nome = $_SESSION['nome'];
 					$('#visualizar #start').text(info.event.start.toLocaleString());
 					$('#visualizar #end').text(info.event.end.toLocaleString());
 					$('#visualizar').modal('show');
+					$("#excluir").click(function () {
+						$id = info.event.id;
+						alert($id);
+					});
 				},
 				selectable: true,
 				select: function (info) {
@@ -82,46 +95,46 @@ $nome = $_SESSION['nome'];
 					$('#cadastrar').modal('show');
 				}
 
- 			});
+			});
 
 			calendar.render();
 		});
 	</script>
 
 	<script>
-	function DataHora(evento, objeto){
-		var keypress=(window.event)?event.keyCode:evento.which;
-		campo = eval (objeto);
-		if (campo.value == '00/00/0000 00:00:00')
-		{
-			campo.value=""
+		function DataHora(evento, objeto){
+			var keypress=(window.event)?event.keyCode:evento.which;
+			campo = eval (objeto);
+			if (campo.value == '00/00/0000 00:00:00')
+			{
+				campo.value=""
+			}
+
+			caracteres = '0123456789';
+			separacao1 = '/';
+			separacao2 = ' ';
+			separacao3 = ':';
+			conjunto1 = 2;
+			conjunto2 = 5;
+			conjunto3 = 10;
+			conjunto4 = 13;
+			conjunto5 = 16;
+			if ((caracteres.search(String.fromCharCode (keypress))!=-1) && campo.value.length < (19))
+			{
+				if (campo.value.length == conjunto1 )
+					campo.value = campo.value + separacao1;
+				else if (campo.value.length == conjunto2)
+					campo.value = campo.value + separacao1;
+				else if (campo.value.length == conjunto3)
+					campo.value = campo.value + separacao2;
+				else if (campo.value.length == conjunto4)
+					campo.value = campo.value + separacao3;
+				else if (campo.value.length == conjunto5)
+					campo.value = campo.value + separacao3;
+			}
+			else
+				event.returnValue = false;
 		}
-	 
-		caracteres = '0123456789';
-		separacao1 = '/';
-		separacao2 = ' ';
-		separacao3 = ':';
-		conjunto1 = 2;
-		conjunto2 = 5;
-		conjunto3 = 10;
-		conjunto4 = 13;
-		conjunto5 = 16;
-		if ((caracteres.search(String.fromCharCode (keypress))!=-1) && campo.value.length < (19))
-		{
-			if (campo.value.length == conjunto1 )
-			campo.value = campo.value + separacao1;
-			else if (campo.value.length == conjunto2)
-			campo.value = campo.value + separacao1;
-			else if (campo.value.length == conjunto3)
-			campo.value = campo.value + separacao2;
-			else if (campo.value.length == conjunto4)
-			campo.value = campo.value + separacao3;
-			else if (campo.value.length == conjunto5)
-			campo.value = campo.value + separacao3;
-		}
-		else
-			event.returnValue = false;
-	}
 	</script>
 
 	<script>
@@ -190,16 +203,17 @@ $nome = $_SESSION['nome'];
 	</div>
 
 	<div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  	<div class="modal-dialog modal-lg" role="document">
-	    	<div class="modal-content">
-	      		<div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">Detalhes do Evento</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          			<span aria-hidden="true">&times;</span>
-	        		</button>
-	      		</div>
-		      	<div class="modal-body">
-		    		<dl class="row">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Detalhes do Evento</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="msg-exc"></span>
+					<dl class="row">
 						<dt class="col-sm-3">ID do evento</dt>
 						<dd class="col-sm-9" id="id"></dd>
 
@@ -211,70 +225,74 @@ $nome = $_SESSION['nome'];
 
 						<dt class="col-sm-3">Fim do evento</dt>
 						<dd class="col-sm-9" id="end"></dd>
-		      		</dl>
-		      	</div>
-	    	</div>
-	  	</div>
+					</dl>
+					<hr>
+					<div>
+						<button type="button" name="excluir" value="excluir" class="btn btn-danger" id="excluir">Excluir</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  	<div class="modal-dialog modal-lg" role="document">
-	    	<div class="modal-content">
-	      		<div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Evento</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          			<span aria-hidden="true">&times;</span>
-	        		</button>
-	      		</div>
-		      	<div class="modal-body">
-		      		<span id="msg-cad"></span>
-		    		<form id="addevent" method="POST">
-		    			<div class="form-group row">
-		    				<label class="col-sm-2 col-form-label">Título</label>
-		    				<div class="col-sm-10">
-      							<input type="text" name="title" class="form-control" id="title" placeholder="Título do evento">
-   							</div>
-		    			</div>
-		    			<div class="form-group row">
-		    				<label class="col-sm-2 col-form-label">Cor</label>
-		    				<div class="col-sm-10">
-      							<select name="color" class="form-control" id="color">
-      								<option value="">Selecione</option>
-      								<option style="color:#FFD700" value="#FFD700">Amarelo</option>
-      								<option style="color:#0071c5" value="#0071c5">Azul Turquesa</option>
-      								<option style="color:#FF4500" value="#FF4500">Laranja</option>
-      								<option style="color:#8B4513" value="#8B4513">Marrom</option>
-      								<option style="color:#1C1C1C" value="#1C1C1C">Preto</option>
-      								<option style="color:#436EEE" value="#436EEE">Azul Royal</option>
-      								<option style="color:#A020F0" value="#A020F0">Roxo</option>
-      								<option style="color:#40E0D0" value="#40E0D0">Turquesa</option>
-      								<option style="color:#228B22" value="#228B22">Verde</option>
-      								<option style="color:#8B0000" value="#8B0000">Vermelho</option>
-      							</select>
-   							</div>
-		    			</div>
-		    			<div class="form-group row">
-		    				<label class="col-sm-2 col-form-label">Início do evento</label>
-		    				<div class="col-sm-10">
-      							<input type="text" name="start" class="form-control" id="start" onkeypress="DataHora(event, this)">
-   							</div>
-		    			</div>
-		    			<div class="form-group row">
-		    				<label class="col-sm-2 col-form-label">Final do evento</label>
-		    				<div class="col-sm-10">
-      							<input type="text" name="end" class="form-control" id="end" onkeypress="DataHora(event, this)">
-   							</div>
-		    			</div>
-		    			<div class="form-group row">
-					    	<div class="col-sm-10">
-					      		<button type="submit" name="CadEvent" id="CadEvent" value="CadEvent" class="btn btn-success">Cadastrar</button>
-					    	</div>
-					  	</div>
-		    		</form>
-		      	</div>
-	    	</div>
-	  	</div>
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Cadastrar Evento</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="msg-cad"></span>
+					<form id="addevent" method="POST">
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Título</label>
+							<div class="col-sm-10">
+								<input type="text" name="title" class="form-control" id="title" placeholder="Título do evento">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Cor</label>
+							<div class="col-sm-10">
+								<select name="color" class="form-control" id="color">
+									<option value="">Selecione</option>
+									<option style="color:#FFD700" value="#FFD700">Amarelo</option>
+									<option style="color:#0071c5" value="#0071c5">Azul Turquesa</option>
+									<option style="color:#FF4500" value="#FF4500">Laranja</option>
+									<option style="color:#8B4513" value="#8B4513">Marrom</option>
+									<option style="color:#1C1C1C" value="#1C1C1C">Preto</option>
+									<option style="color:#436EEE" value="#436EEE">Azul Royal</option>
+									<option style="color:#A020F0" value="#A020F0">Roxo</option>
+									<option style="color:#40E0D0" value="#40E0D0">Turquesa</option>
+									<option style="color:#228B22" value="#228B22">Verde</option>
+									<option style="color:#8B0000" value="#8B0000">Vermelho</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Início do evento</label>
+							<div class="col-sm-10">
+								<input type="text" name="start" class="form-control" id="start" onkeypress="DataHora(event, this)">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Final do evento</label>
+							<div class="col-sm-10">
+								<input type="text" name="end" class="form-control" id="end" onkeypress="DataHora(event, this)">
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<div class="col-sm-10">
+								<button type="submit" name="CadEvent" id="CadEvent" value="CadEvent" class="btn btn-success">Cadastrar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-
 </body>
 </html>
