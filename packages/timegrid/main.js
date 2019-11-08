@@ -1,9 +1,8 @@
 /*!
-FullCalendar Time Grid Plugin v4.3.0
+FullCalendar Time Grid Plugin v4.1.0
 Docs & License: https://fullcalendar.io/
 (c) 2019 Adam Shaw
 */
-
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@fullcalendar/core'), require('@fullcalendar/daygrid')) :
     typeof define === 'function' && define.amd ? define(['exports', '@fullcalendar/core', '@fullcalendar/daygrid'], factory) :
@@ -118,14 +117,13 @@ Docs & License: https://fullcalendar.io/
         };
         // Renders the HTML for a single event segment's default rendering
         TimeGridEventRenderer.prototype.renderSegHtml = function (seg, mirrorInfo) {
-            var view = this.context.view;
             var eventRange = seg.eventRange;
             var eventDef = eventRange.def;
             var eventUi = eventRange.ui;
             var allDay = eventDef.allDay;
-            var isDraggable = view.computeEventDraggable(eventDef, eventUi);
-            var isResizableFromStart = seg.isStart && view.computeEventStartResizable(eventDef, eventUi);
-            var isResizableFromEnd = seg.isEnd && view.computeEventEndResizable(eventDef, eventUi);
+            var isDraggable = eventUi.startEditable;
+            var isResizableFromStart = seg.isStart && eventUi.durationEditable && this.context.options.eventResizableFromStart;
+            var isResizableFromEnd = seg.isEnd && eventUi.durationEditable;
             var classes = this.getSegClasses(seg, isDraggable, isResizableFromStart || isResizableFromEnd, mirrorInfo);
             var skinCss = core.cssToStr(this.getSkinCss(eventUi));
             var timeText;
@@ -756,7 +754,7 @@ Docs & License: https://fullcalendar.io/
         /* Coordinates
         ------------------------------------------------------------------------------------------------------------------*/
         TimeGrid.prototype.getTotalSlatHeight = function () {
-            return this.slatContainerEl.getBoundingClientRect().height;
+            return this.slatContainerEl.offsetHeight;
         };
         // Computes the top coordinate, relative to the bounds of the grid, of the given date.
         // A `startOfDayDate` must be given for avoiding ambiguity over how to treat midnight.
@@ -764,13 +762,13 @@ Docs & License: https://fullcalendar.io/
             if (!startOfDayDate) {
                 startOfDayDate = core.startOfDay(when);
             }
-            return this.computeTimeTop(core.createDuration(when.valueOf() - startOfDayDate.valueOf()));
+            return this.computeTimeTop(when.valueOf() - startOfDayDate.valueOf());
         };
         // Computes the top coordinate, relative to the bounds of the grid, of the given time (a Duration).
-        TimeGrid.prototype.computeTimeTop = function (duration) {
+        TimeGrid.prototype.computeTimeTop = function (timeMs) {
             var len = this.slatEls.length;
             var dateProfile = this.props.dateProfile;
-            var slatCoverage = (duration.milliseconds - core.asRoughMs(dateProfile.minTime)) / core.asRoughMs(this.slotDuration); // floating-point value of # of slots covered
+            var slatCoverage = (timeMs - core.asRoughMs(dateProfile.minTime)) / core.asRoughMs(this.slotDuration); // floating-point value of # of slots covered
             var slatIndex;
             var slatRemainder;
             // compute a floating-point number for how many slats should be progressed through.
@@ -1034,8 +1032,7 @@ Docs & License: https://fullcalendar.io/
                     cellWeekNumbersVisible: false
                 });
                 // have the day-grid extend it's coordinate area over the <hr> dividing the two grids
-                var dividerEl = _this.el.querySelector('.fc-divider');
-                _this.dayGrid.bottomCoordPadding = dividerEl.getBoundingClientRect().height;
+                _this.dayGrid.bottomCoordPadding = _this.el.querySelector('.fc-divider').offsetHeight;
             }
             return _this;
         }
@@ -1161,8 +1158,8 @@ Docs & License: https://fullcalendar.io/
         /* Scroll
         ------------------------------------------------------------------------------------------------------------------*/
         // Computes the initial pre-configured scroll state prior to allowing the user to change it
-        TimeGridView.prototype.computeDateScroll = function (duration) {
-            var top = this.timeGrid.computeTimeTop(duration);
+        TimeGridView.prototype.computeDateScroll = function (timeMs) {
+            var top = this.timeGrid.computeTimeTop(timeMs);
             // zoom can give weird floating-point values. rather scroll a little bit further
             top = Math.ceil(top);
             if (top) {

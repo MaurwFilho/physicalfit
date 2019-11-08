@@ -1,9 +1,8 @@
 /*!
-FullCalendar Interaction Plugin v4.3.0
+FullCalendar Interaction Plugin v4.1.0
 Docs & License: https://fullcalendar.io/
 (c) 2019 Adam Shaw
 */
-
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@fullcalendar/core')) :
     typeof define === 'function' && define.amd ? define(['exports', '@fullcalendar/core'], factory) :
@@ -843,7 +842,7 @@ Docs & License: https://fullcalendar.io/
                 this.delayTimeoutId = setTimeout(function () {
                     _this.delayTimeoutId = null;
                     _this.handleDelayEnd(ev);
-                }, this.delay); // not assignable to number!
+                }, this.delay);
             }
             else {
                 this.handleDelayEnd(ev);
@@ -1288,7 +1287,7 @@ Docs & License: https://fullcalendar.io/
                 mirror.parentNode = initialCalendar.el;
                 mirror.revertDuration = component.opt('dragRevertDuration');
                 var isValid = component.isValidSegDownEl(origTarget) &&
-                    !core.elementClosest(origTarget, '.fc-resizer'); // NOT on a resizer
+                    !core.elementClosest(origTarget, '.fc-resizer');
                 dragging.setIgnoreMove(!isValid);
                 // disable dragging for elements that are resizable (ie, selectable)
                 // but are not draggable
@@ -1391,7 +1390,7 @@ Docs & License: https://fullcalendar.io/
                 if (_this.isDragging) {
                     var initialCalendar_1 = _this.component.calendar;
                     var initialView = _this.component.view;
-                    var _a = _this, receivingCalendar = _a.receivingCalendar, validMutation = _a.validMutation;
+                    var receivingCalendar = _this.receivingCalendar;
                     var eventDef = _this.eventRange.def;
                     var eventInstance = _this.eventRange.instance;
                     var eventApi = new core.EventApi(initialCalendar_1, eventDef, eventInstance);
@@ -1407,25 +1406,33 @@ Docs & License: https://fullcalendar.io/
                             view: initialView
                         }
                     ]);
-                    if (validMutation) {
+                    if (_this.validMutation) {
                         // dropped within same calendar
                         if (receivingCalendar === initialCalendar_1) {
                             initialCalendar_1.dispatch({
                                 type: 'MERGE_EVENTS',
                                 eventStore: mutatedRelevantEvents
                             });
-                            var transformed = {};
-                            for (var _i = 0, _b = initialCalendar_1.pluginSystem.hooks.eventDropTransformers; _i < _b.length; _i++) {
-                                var transformer = _b[_i];
-                                __assign(transformed, transformer(validMutation, initialCalendar_1));
+                            var eventDropArg = {};
+                            for (var _i = 0, _a = initialCalendar_1.pluginSystem.hooks.eventDropTransformers; _i < _a.length; _i++) {
+                                var transformer = _a[_i];
+                                __assign(eventDropArg, transformer(_this.validMutation, initialCalendar_1));
                             }
-                            var eventDropArg = __assign({}, transformed, { el: ev.subjectEl, delta: validMutation.datesDelta, oldEvent: eventApi, event: new core.EventApi(// the data AFTER the mutation
-                                initialCalendar_1, mutatedRelevantEvents.defs[eventDef.defId], eventInstance ? mutatedRelevantEvents.instances[eventInstance.instanceId] : null), revert: function () {
+                            __assign(eventDropArg, {
+                                el: ev.subjectEl,
+                                delta: _this.validMutation.startDelta,
+                                oldEvent: eventApi,
+                                event: new core.EventApi(// the data AFTER the mutation
+                                initialCalendar_1, mutatedRelevantEvents.defs[eventDef.defId], eventInstance ? mutatedRelevantEvents.instances[eventInstance.instanceId] : null),
+                                revert: function () {
                                     initialCalendar_1.dispatch({
                                         type: 'MERGE_EVENTS',
                                         eventStore: relevantEvents_1
                                     });
-                                }, jsEvent: ev.origEvent, view: initialView });
+                                },
+                                jsEvent: ev.origEvent,
+                                view: initialView
+                            });
                             initialCalendar_1.publiclyTrigger('eventDrop', [eventDropArg]);
                             // dropped in different calendar
                         }
@@ -1451,15 +1458,17 @@ Docs & License: https://fullcalendar.io/
                                     eventInstanceId: eventInstance.instanceId
                                 });
                             }
-                            var dropArg = __assign({}, receivingCalendar.buildDatePointApi(finalHit.dateSpan), { draggedEl: ev.subjectEl, jsEvent: ev.origEvent, view: finalHit.component // should this be finalHit.component.view? See #4644
-                             });
+                            var dropArg = receivingCalendar.buildDatePointApi(finalHit.dateSpan);
+                            dropArg.draggedEl = ev.subjectEl;
+                            dropArg.jsEvent = ev.origEvent;
+                            dropArg.view = finalHit.component; // ?
                             receivingCalendar.publiclyTrigger('drop', [dropArg]);
                             receivingCalendar.publiclyTrigger('eventReceive', [
                                 {
                                     draggedEl: ev.subjectEl,
                                     event: new core.EventApi(// the data AFTER the mutation
                                     receivingCalendar, mutatedRelevantEvents.defs[eventDef.defId], mutatedRelevantEvents.instances[eventInstance.instanceId]),
-                                    view: finalHit.component // should this be finalHit.component.view? See #4644
+                                    view: finalHit.component
                                 }
                             ]);
                         }
@@ -1560,7 +1569,8 @@ Docs & License: https://fullcalendar.io/
             standardProps.allDay = false;
         }
         var mutation = {
-            datesDelta: delta,
+            startDelta: delta,
+            endDelta: delta,
             standardProps: standardProps
         };
         for (var _i = 0, massagers_1 = massagers; _i < massagers_1.length; _i++) {
@@ -1870,7 +1880,10 @@ Docs & License: https://fullcalendar.io/
                     var finalHit = _this.hitDragging.finalHit;
                     var finalView = finalHit.component.view;
                     var dragMeta = _this.dragMeta;
-                    var arg = __assign({}, receivingCalendar.buildDatePointApi(finalHit.dateSpan), { draggedEl: pev.subjectEl, jsEvent: pev.origEvent, view: finalView });
+                    var arg = receivingCalendar.buildDatePointApi(finalHit.dateSpan);
+                    arg.draggedEl = pev.subjectEl;
+                    arg.jsEvent = pev.origEvent;
+                    arg.view = finalView;
                     receivingCalendar.publiclyTrigger('drop', [arg]);
                     if (dragMeta.create) {
                         receivingCalendar.dispatch({

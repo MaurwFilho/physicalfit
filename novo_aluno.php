@@ -18,7 +18,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Novo Aluno</title>
     <link rel="stylesheet" type="text/css" href="css/stylenovoaluno.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>
 <body>
@@ -47,7 +47,6 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                 <div>
                     <input type="date" name="nascimento" id="nascimento" placeholder="  Data de Nascimento" required>
                     <input type="text" name="celular" id="celular" placeholder="  Celular" required>
-                    <!-- <input type="text" name="sexo" id="sexo" placeholder="  Sexo"> -->
                     <label id="sexo">Sexo</label>
                     <input type="radio" name="sexo" id="masculino" value="masculino">
                     <label for="sexo" id="sexo">Masculino</label>

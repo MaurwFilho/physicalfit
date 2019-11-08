@@ -23,7 +23,7 @@ require_once("conexao.php");
     <meta charset="UTF-8">
     <title>Treinos</title>
     <link rel="stylesheet" type="text/css" href="css/styletreino.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>
 <body>
@@ -52,7 +52,7 @@ require_once("conexao.php");
                 $nome = $row['nome'];
             }
             ?>
-            <input id="select-treino" type="text" value="Aluno: <?php if(isset($nome)) echo $nome; ?>" disabled style="text-align: center; font-weight: bold;">
+            <input id="select-treino" type="text" value="Aluno: <?php if(isset($nome)) echo $nome; ?>" disabled>
             <input type="submit" id="adicionar" class="btn btn-dark btn-sm" value="Adicionar">
             <a id="voltar" class="btn btn-dark btn-sm float-right" href="gerenciaralunos.php">Voltar</a>
         </div>
@@ -167,8 +167,5 @@ require_once("conexao.php");
             </div>
         </div>
     </form>
-
-    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -20,8 +20,6 @@ $del = 0;
 
 $id = $_SESSION['id_aluno'];
 
-
-
 $rs = $sql->select("SELECT idtreino FROM treino WHERE aluno_idaluno = $id;");
 if ($rs) {
     $idtr = $rs[0]['idtreino'];
@@ -146,7 +144,7 @@ if(isset($_POST['excluir'])) {
     <meta charset="UTF-8">
     <title>Treinos</title>
     <link rel="stylesheet" type="text/css" href="css/styletreino.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>
 <body>
@@ -291,8 +289,5 @@ if(isset($_POST['excluir'])) {
             </div>
         </div>
     </form>
-
-    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

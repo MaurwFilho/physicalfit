@@ -1,9 +1,8 @@
 /*!
-FullCalendar Luxon Plugin v4.3.0
+FullCalendar Luxon Plugin v4.1.0
 Docs & License: https://fullcalendar.io/
 (c) 2019 Adam Shaw
 */
-
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('luxon'), require('@fullcalendar/core')) :
     typeof define === 'function' && define.amd ? define(['exports', 'luxon', '@fullcalendar/core'], factory) :
@@ -151,14 +150,7 @@ Docs & License: https://fullcalendar.io/
                     startTail;
             }
         }
-        var startWhole = formatStart(cmd.whole);
-        var endWhole = formatEnd(cmd.whole);
-        if (startWhole === endWhole) {
-            return startWhole;
-        }
-        else {
-            return startWhole + separator + endWhole;
-        }
+        return formatStart(cmd.whole) + separator + formatEnd(cmd.whole);
     }
 
     exports.default = main;

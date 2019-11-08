@@ -25,7 +25,7 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
     <meta charset="UTF-8">
     <title>Avaliação Fisica</title>
     <link rel="stylesheet" type="text/css" href="css/styleavaliacaofisica.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>
 <body>
@@ -108,8 +108,5 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
             </div>
         </div>
     </form>
-
-    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

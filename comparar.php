@@ -116,7 +116,7 @@ if (isset($_POST['comparar'])) {
 	<meta charset="UTF-8">
 	<title>Comparar Medidas</title>
 	<link rel="stylesheet" type="text/css" href="css/stylecomparar.css">
-	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>
 <body>
@@ -275,8 +275,5 @@ if (isset($_POST['comparar'])) {
 				<input type="text" name="cintura" id="compright" value="  Cintura: <?php if(isset($cintura)) echo $cintura ?>" placeholder="  Cintura" disabled> 
 			</div>
 		</div>
-
-		<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 	</html>

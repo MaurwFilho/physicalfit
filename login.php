@@ -11,7 +11,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/stylelogin.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>
 
@@ -37,7 +37,8 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
             <br>
 
             <div>
-                <a id="esquecisenha" href="#" >Esqueci Minha Senha</a>
+                <!-- <a id="esquecisenha" href="#" >Esqueci Minha Senha</a> -->
+                <hr>
             </div>
 
             <div>
@@ -46,7 +47,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
             <div>
                 <?php 
                     if ($erro == 1) {
-                        echo '<font color="#FFFF00"><strong>Usuário ou senha inválido(s)</strong></font>';
+                        echo '<font color="#444"><strong>USUÁRIO OU SENHA INVÁLIDO(S)</strong></font>';
                     }
                  ?>
             </div>
@@ -54,9 +55,6 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
         </div>
 
     </form>
-
-    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

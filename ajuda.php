@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
         <link rel="stylesheet" type="text/css" href="css/styleajuda.css">
-        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="icon" type="imagem/png" href="img/icone.png"/>
     </head>
     <body>

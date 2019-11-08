@@ -2,6 +2,7 @@ header{
     background-color: #223543;
     text-align: center;
     height: 100px;
+    width: 101%;
 }
 
 header h1{
@@ -14,6 +15,14 @@ body {
   background-image: url('../img/physicalfit11.jpg');
   background-size: cover;
   font-size: 14px;
+}
+
+body .col-md-9 {
+    padding: 0;
+}
+
+body .col-md-3 {
+    padding: 0;
 }
 
 #calendar {
