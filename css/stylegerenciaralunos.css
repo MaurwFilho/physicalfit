@@ -37,7 +37,7 @@ body .container{
 #right{
     width: 550px;
     height: 100%;
-    margin-top: 7%;
+    margin-top: 1%;
     margin-right: 5%;
     padding-bottom: 5%;
     background-color: white;
@@ -170,6 +170,15 @@ body .circle{
     font-weight: bold;
     margin-left: 1.5%;
     margin-bottom: 6px;
+    border-width: 0;
+}
+
+#excava{
+    border-radius: 30px;
+    height: 45px;
+    width: 145px;
+    font-weight: bold;
+    margin-left: 1.5%;
     border-width: 0;
 }
 

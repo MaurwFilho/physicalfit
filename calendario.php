@@ -79,14 +79,13 @@ $nome = $_SESSION['nome'];
 					info.jsEvent.preventDefault();
 
 					$('#visualizar #id').text(info.event.id);
+					$('#visualizar #id_event').val(info.event.id);
+
 					$('#visualizar #title').text(info.event.title);
 					$('#visualizar #start').text(info.event.start.toLocaleString());
 					$('#visualizar #end').text(info.event.end.toLocaleString());
 					$('#visualizar').modal('show');
-					$("#excluir").click(function () {
-						$id = info.event.id;
-						alert($id);
-					});
+
 				},
 				selectable: true,
 				select: function (info) {
@@ -155,8 +154,9 @@ $nome = $_SESSION['nome'];
 							$("#msg-cad").html(retorna['msg']);
 						}
 					}
-				})
+				});
 			});
+
 		});
 	</script>
 
@@ -212,24 +212,26 @@ $nome = $_SESSION['nome'];
 					</button>
 				</div>
 				<div class="modal-body">
-					<span id="msg-exc"></span>
-					<dl class="row">
-						<dt class="col-sm-3">ID do evento</dt>
-						<dd class="col-sm-9" id="id"></dd>
+					<form method="post" action="exc_event.php">
+						<dl class="row">
+							<dt class="col-sm-3">ID do evento</dt>
+							<dd class="col-sm-9" id="id"></dd>
+							<input type="hidden" name="id_event" id="id_event">
 
-						<dt class="col-sm-3">Título do evento</dt>
-						<dd class="col-sm-9" id="title"></dd>
+							<dt class="col-sm-3">Título do evento</dt>
+							<dd class="col-sm-9" id="title"></dd>
 
-						<dt class="col-sm-3">Início do evento</dt>
-						<dd class="col-sm-9" id="start"></dd>
+							<dt class="col-sm-3">Início do evento</dt>
+							<dd class="col-sm-9" id="start"></dd>
 
-						<dt class="col-sm-3">Fim do evento</dt>
-						<dd class="col-sm-9" id="end"></dd>
-					</dl>
-					<hr>
-					<div>
-						<button type="button" name="excluir" value="excluir" class="btn btn-danger" id="excluir">Excluir</button>
-					</div>
+							<dt class="col-sm-3">Fim do evento</dt>
+							<dd class="col-sm-9" id="end"></dd>
+						</dl>
+						<hr>
+						<div>
+							<input type="submit" name="excluir" class="btn btn-danger" value="Excluir" onclick="return confirm('Quer mesmo excluir este evento?')">
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

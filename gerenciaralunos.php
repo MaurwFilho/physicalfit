@@ -42,7 +42,7 @@ if (isset($_POST['buscar'])) {
 }
 
 if (isset($_POST['excluir'])) {
-    if (isset($_SESSION['id_aluno'])){
+    if (isset($_SESSION['id_aluno'])) {
         $id = $_SESSION['id_aluno'];
 
         $rs = $sql->select("SELECT idtreino FROM treino WHERE aluno_idaluno = $id;");    
@@ -73,7 +73,44 @@ if (isset($_POST['excluir'])) {
     }
 }
 
+if (isset($_POST['excava'])) {
+    if (isset($_POST['id_avaliacao'])) {
+        $id = $_POST['id_avaliacao'];
+        $exibe = 1;
+        $rs = $sql->query("DELETE FROM avaliacao WHERE idavaliacao = $id;");
+        if ($rs) {
+            $del = 4;
+        } else {
+            $del = 2;
+        }
+    }
+}
+
 if (isset($_POST['buscar_avaliacao'])) {
+    $id = $_SESSION['id_aluno'];
+    $query = "SELECT * FROM aluno WHERE idaluno = $id;";
+    $result = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($result)){
+        $nome = $row['nome'];
+        $nascimento = $row['nascimento'];
+        $nascimento = date( 'd-m-Y' , strtotime( $nascimento ) );
+        $objetivo = $row['objetivo'];
+        $sexo = $row['sexo'];
+    }
+    $query = "SELECT * FROM avaliacao WHERE aluno_idaluno = $id ORDER BY idavaliacao DESC LIMIT 1;";
+    $rs = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($rs)){
+        $ultava = $row['data_avaliacao'];
+        $ultava = date( 'd-m-Y' , strtotime( $ultava ) );
+        $estatura = $row['estatura'];
+        $estatura = str_replace('.', ',', $estatura);
+        $peso = $row['peso'];
+        $peso = str_replace('.', ',', $peso);
+    }
+
+    if (!isset($_POST['avaliacao'])) {
+        header('Location: gerenciaralunos.php');
+    }
     $exibe = 1;
     $id_avaliacao = $_POST['avaliacao'];
     $rs = $sql->select("SELECT * FROM avaliacao WHERE idavaliacao = $id_avaliacao;");
@@ -105,6 +142,26 @@ if (isset($_POST['buscar_avaliacao'])) {
 }
 
 if (isset($_POST['exbmedidas'])) {
+    $id = $_SESSION['id_aluno'];
+    $query = "SELECT * FROM aluno WHERE idaluno = $id;";
+    $result = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($result)){
+        $nome = $row['nome'];
+        $nascimento = $row['nascimento'];
+        $nascimento = date( 'd-m-Y' , strtotime( $nascimento ) );
+        $objetivo = $row['objetivo'];
+        $sexo = $row['sexo'];
+    }
+    $query = "SELECT * FROM avaliacao WHERE aluno_idaluno = $id ORDER BY idavaliacao DESC LIMIT 1;";
+    $rs = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($rs)){
+        $ultava = $row['data_avaliacao'];
+        $ultava = date( 'd-m-Y' , strtotime( $ultava ) );
+        $estatura = $row['estatura'];
+        $estatura = str_replace('.', ',', $estatura);
+        $peso = $row['peso'];
+        $peso = str_replace('.', ',', $peso);
+    }
     if (!isset($_SESSION['id_aluno'])){
         header('Location: gerenciaralunos.php');
     } else {
@@ -142,11 +199,14 @@ if (isset($_POST['exbmedidas'])) {
         if ($del == 3) {
             echo '<font color="#444"><strong>NENHUM ALUNO SELECIONADO</strong></font>';
         }
+        if ($del == 4) {
+            echo '<font color="#444"><strong>AVALIAÇÃO DELETADA</strong></font>';
+        }
         ?>
     </div>
 
     <div id="voltar">
-        <a  class="btn btn-sm" href="calendario.php" style="color: #444;">Voltar</a>
+        <a class="btn btn-sm" href="calendario.php" style="color: #444;">Voltar</a>
     </div>
 
     <form action="#" method="post">
@@ -160,7 +220,7 @@ if (isset($_POST['exbmedidas'])) {
                     $query = "SELECT * FROM aluno";
                     $result = mysqli_query($conn, $query);
                     ?>
-
+                    <option value=null></option>
                     <?php while($row = mysqli_fetch_array($result)){ ?>
                         <option value="<?php echo $row['idaluno'] ?>"><?php echo $row['nome'] ?></option>
                     <?php }
@@ -189,7 +249,7 @@ if (isset($_POST['exbmedidas'])) {
             </div>
             <div>
                 <input type="text" id="ultimaav" value="<?php if(isset($ultava)) echo "  ".$ultava ?>" placeholder="  Ultima Avaliação" disabled>
-                <input <?php if(!isset($nome)) echo "hidden" ?> type="submit" id="excluir" class="btn btn-dark btn-sm" value="Excluir Aluno" onclick="return confirm('Quer mesmo excluir este aluno?')">
+                <input <?php if(!isset($nome)) echo "hidden" ?> type="submit" id="excluir" name="excluir" class="btn btn-dark btn-sm" value="Excluir Aluno" onclick="return confirm('Quer mesmo excluir este aluno?')">
             </div>
 
             <div>
@@ -225,48 +285,52 @@ if (isset($_POST['exbmedidas'])) {
                 </select>
                 <input type="submit" id="buscar" class="btn btn-dark btn-sm" name="buscar_avaliacao" value="Buscar" style="background-color: black;">
             </div>
+            <div>
+                <input type="hidden" name="id_avaliacao" value="<?php if(isset($id_avaliacao)) echo $id_avaliacao ?>">
+                <input type="text" name="pesogordo" id="ppg" value="  Peso Gordo: <?php if(isset($pesogordo)) echo $pesogordo ?>" placeholder="  Peso Gordo" disabled>
+                <input type="text" name="pesomagro" id="ppg" value="  Peso Magro: <?php if(isset($pesomagro)) echo $pesomagro ?>" placeholder="  Peso Magro" disabled>
+                <input type="text" name="gorduraatual" id="ppg" value="  Gordura Atual: <?php if(isset($gorduraatual)) echo $gorduraatual ?>" placeholder="  Gordura Atual" disabled>
+            </div>
+            <div>
+                <input type="text" name="tricipital" id="taa" value="  Tricipital: <?php if(isset($tricipital)) echo $tricipital ?>" placeholder="  Tricipital" disabled>
+                <input type="text" name="abdominal" id="taa" value="  Abdominal: <?php if(isset($abdominal)) echo $abdominal ?>" placeholder="  Abdominal" disabled>
+                <input type="text" name="auxiliarmedia" value="  Auxiliar Média: <?php if(isset($auxiliarmedia)) echo $auxiliarmedia ?>" id="taa" placeholder="  Auxiliar Média" disabled> 
+            </div>
+            <div>
+                <input type="text" name="subscapular" id="ssi" value="  Subscapular: <?php if(isset($subscapular)) echo $subscapular ?>" placeholder="  Subscapular" disabled>
+                <input type="text" name="suprailiaca" id="ssi" value="  Supra-Iliaca: <?php if(isset($suprailiaca)) echo $suprailiaca ?>" placeholder="  Supra-Iliaca" disabled>
+                <input type="text" name="imc" id="ssi" value="  IMC: <?php if(isset($imc)) echo $imc ?>" placeholder="  IMC" disabled> 
+            </div>
+            <div>
+                <input type="text" name="peitoral" id="pcc" value="  Peitoral: <?php if(isset($peitoral)) echo $peitoral ?>" placeholder="  Peitoral" disabled>
+                <input type="text" name="coxad" id="pcc" value="  Coxa Direita: <?php if(isset($ccoxad)) echo $ccoxad ?>" placeholder="  Coxa Direita" disabled>
+                <input type="text" name="coxae" id="pcc" value="  Coxa Esquerda: <?php if(isset($ccoxae)) echo $ccoxae ?>" placeholder="  Coxa Esquerda" disabled>     
+            </div>
+            <div>
+                <input type="text" name="bicepsd" id="baa" value="  Biceps Direito: <?php if(isset($bicepsd)) echo $bicepsd ?>" placeholder="  Biceps Direito" disabled>
+                <input type="text" name="antebracod" id="baa" value="  Antebraço D: <?php if(isset($antebracod)) echo $antebracod ?>" placeholder="  Antebraço Direito" disabled>
+                <input type="text" name="abdomen" id="baa" value="  Abdomen: <?php if(isset($abdomen)) echo $abdomen ?>" placeholder="  Abdomen" disabled>  
+            </div>
+            <div>
+                <input type="text" name="bicepse" id="baq" value="  Biceps Esquerdo: <?php if(isset($bicepse)) echo $bicepse ?>" placeholder="  Biceps Esquerdo" disabled>
+                <input type="text" name="antebracoe" id="baq" value="  Antebraço E: <?php if(isset($antebracoe)) echo $antebracoe ?>" placeholder="  Antebraço Esquerdo" disabled>
+                <input type="text" name="quadril" id="baq" value="  Quadril: <?php if(isset($quadril)) echo $quadril ?>" placeholder="  Quadril" disabled> 
+            </div>
+            <div>
+                <input type="text" name="coxad" id="cpf" value="  Coxa Direira: <?php if(isset($pcoxad)) echo $pcoxad ?>" placeholder="  Coxa Direira" disabled>
+                <input type="text" name="panturrilhad" id="cpf" value="  Panturrilha D: <?php if(isset($panturrilhad)) echo $panturrilhad ?>" placeholder="  Panturrilha Direita" disabled>
+                <input type="text" name="torax" id="cpf" value="  Torax: <?php if(isset($torax)) echo $torax ?>" placeholder="  Torax" disabled> 
+            </div>
+            <div>
+                <input type="text" name="coxae" id="cpp" value="  Coxa Esquerda: <?php if(isset($pcoxae)) echo $pcoxae ?>" placeholder="  Coxa Esquerda" disabled>
+                <input type="text" name="panturrilhae" id="cpp" value="  Panturrilha E: <?php if(isset($panturrilhae)) echo $panturrilhae ?>" placeholder="  Panturrilha Esquerda" disabled>
+                <input type="text" name="peso" id="cpp" value="  Cintura: <?php if(isset($cintura)) echo $cintura ?>" placeholder="  Cintura" disabled> 
+            </div>
+            <hr>
+            <div>
+                <input <?php if(!isset($id_avaliacao)) echo "hidden" ?> type="submit" id="excava" name="excava" class="btn btn-danger btn-sm" value="Excluir Avaliação" onclick="return confirm('Quer mesmo excluir esta avaliação?')">
+            </div>
         </form>
-
-        <div>
-            <input type="text" name="pesogordo" id="ppg" value="  Peso Gordo: <?php if(isset($pesogordo)) echo $pesogordo ?>" placeholder="  Peso Gordo" disabled>
-            <input type="text" name="pesomagro" id="ppg" value="  Peso Magro: <?php if(isset($pesomagro)) echo $pesomagro ?>" placeholder="  Peso Magro" disabled>
-            <input type="text" name="gorduraatual" id="ppg" value="  Gordura Atual: <?php if(isset($gorduraatual)) echo $gorduraatual ?>" placeholder="  Gordura Atual" disabled>
-        </div>
-        <div>
-            <input type="text" name="tricipital" id="taa" value="  Tricipital: <?php if(isset($tricipital)) echo $tricipital ?>" placeholder="  Tricipital" disabled>
-            <input type="text" name="abdominal" id="taa" value="  Abdominal: <?php if(isset($abdominal)) echo $abdominal ?>" placeholder="  Abdominal" disabled>
-            <input type="text" name="auxiliarmedia" value="  Auxiliar Média: <?php if(isset($auxiliarmedia)) echo $auxiliarmedia ?>" id="taa" placeholder="  Auxiliar Média" disabled> 
-        </div>
-        <div>
-            <input type="text" name="subscapular" id="ssi" value="  Subscapular: <?php if(isset($subscapular)) echo $subscapular ?>" placeholder="  Subscapular" disabled>
-            <input type="text" name="suprailiaca" id="ssi" value="  Supra-Iliaca: <?php if(isset($suprailiaca)) echo $suprailiaca ?>" placeholder="  Supra-Iliaca" disabled>
-            <input type="text" name="imc" id="ssi" value="  IMC: <?php if(isset($imc)) echo $imc ?>" placeholder="  IMC" disabled> 
-        </div>
-        <div>
-            <input type="text" name="peitoral" id="pcc" value="  Peitoral: <?php if(isset($peitoral)) echo $peitoral ?>" placeholder="  Peitoral" disabled>
-            <input type="text" name="coxad" id="pcc" value="  Coxa Direita: <?php if(isset($ccoxad)) echo $ccoxad ?>" placeholder="  Coxa Direita" disabled>
-            <input type="text" name="coxae" id="pcc" value="  Coxa Esquerda: <?php if(isset($ccoxae)) echo $ccoxae ?>" placeholder="  Coxa Esquerda" disabled>     
-        </div>
-        <div>
-            <input type="text" name="bicepsd" id="baa" value="  Biceps Direito: <?php if(isset($bicepsd)) echo $bicepsd ?>" placeholder="  Biceps Direito" disabled>
-            <input type="text" name="antebracod" id="baa" value="  Antebraço D: <?php if(isset($antebracod)) echo $antebracod ?>" placeholder="  Antebraço Direito" disabled>
-            <input type="text" name="abdomen" id="baa" value="  Abdomen: <?php if(isset($abdomen)) echo $abdomen ?>" placeholder="  Abdomen" disabled>  
-        </div>
-        <div>
-            <input type="text" name="bicepse" id="baq" value="  Biceps Esquerdo: <?php if(isset($bicepse)) echo $bicepse ?>" placeholder="  Biceps Esquerdo" disabled>
-            <input type="text" name="antebracoe" id="baq" value="  Antebraço E: <?php if(isset($antebracoe)) echo $antebracoe ?>" placeholder="  Antebraço Esquerdo" disabled>
-            <input type="text" name="quadril" id="baq" value="  Quadril: <?php if(isset($quadril)) echo $quadril ?>" placeholder="  Quadril" disabled> 
-        </div>
-        <div>
-            <input type="text" name="coxad" id="cpf" value="  Coxa Direira: <?php if(isset($pcoxad)) echo $pcoxad ?>" placeholder="  Coxa Direira" disabled>
-            <input type="text" name="panturrilhad" id="cpf" value="  Panturrilha D: <?php if(isset($panturrilhad)) echo $panturrilhad ?>" placeholder="  Panturrilha Direita" disabled>
-            <input type="text" name="torax" id="cpf" value="  Torax: <?php if(isset($torax)) echo $torax ?>" placeholder="  Torax" disabled> 
-        </div>
-        <div>
-            <input type="text" name="coxae" id="cpp" value="  Coxa Esquerda: <?php if(isset($pcoxae)) echo $pcoxae ?>" placeholder="  Coxa Esquerda" disabled>
-            <input type="text" name="panturrilhae" id="cpp" value="  Panturrilha E: <?php if(isset($panturrilhae)) echo $panturrilhae ?>" placeholder="  Panturrilha Esquerda" disabled>
-            <input type="text" name="peso" id="cpp" value="  Cintura: <?php if(isset($cintura)) echo $cintura ?>" placeholder="  Cintura" disabled> 
-        </div>
     </div>
 </body>
 </html>
