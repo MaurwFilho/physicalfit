@@ -8,19 +8,48 @@ if (!isset($_SESSION['nome'])) {
 
 require_once("conexao.php");
 
-$idprofessor = $_SESSION['id_professor'];
-$sql = "SELECT * FROM events WHERE professor_idprofessor = $idprofessor;";
+$nome_professor = $_SESSION['nome'];
+
+$data = date('Y/m/d',mktime(0,0,0,date('m') - 3,date('d'),date('Y')));
+$data = str_replace('/', '-', '"'.$data.'"');
+
+$sql = "SELECT * FROM avaliacao WHERE data_avaliacao = $data;";
 $rs = mysqli_query($conn, $sql);
 
-$nome = $_SESSION['nome'];
+if (mysqli_num_rows($rs) > 1) {
+	while($row = mysqli_fetch_array($rs)){
+		$idaluno = $row['aluno_idaluno'];
+		$query = "SELECT * FROM aluno WHERE idaluno = $idaluno;";
+		$result = mysqli_query($conn, $query);
+		while($row_aluno = mysqli_fetch_array($result)){
+			$nome_aluno[] = $row_aluno['nome'];
+		}
+	}
 
+	$_SESSION['msg'] = '<div class="alert" id="msg" role="alert">Os alunos abaixo precisam de uma nova avaliação!
+	<br>';
+	foreach ($nome_aluno as $nome){
+		$_SESSION['msg'] .= ' - '.$nome.'<br>';
+	}
+	$_SESSION['msg'] .= '</div>';
+
+} elseif(mysqli_num_rows($rs) == 1) {
+	while($row = mysqli_fetch_array($rs)){
+		$idaluno = $row['aluno_idaluno'];
+	}
+	$rs = mysqli_query($conn, "SELECT * FROM aluno WHERE idaluno = $idaluno;");
+	while($row = mysqli_fetch_array($rs)){
+		$nome = $row['nome'];
+	}
+
+	$_SESSION['msg'] = '<div class="alert" id="msg" role="alert">O aluno '.$nome.' precisa de uma nova avaliação!</div>';
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<title>Início</title>
 	<link rel="stylesheet" type="text/css" href="css/stylecalendario.css">
@@ -58,6 +87,9 @@ $nome = $_SESSION['nome'];
 				eventLimit: true,
 				events: [
 				<?php 
+				$idprofessor = $_SESSION['id_professor'];
+				$sql = "SELECT * FROM events WHERE professor_idprofessor = $idprofessor;";
+				$rs = mysqli_query($conn, $sql);
 				while($row = mysqli_fetch_array($rs)) {
 					?>
 					{
@@ -183,7 +215,7 @@ $nome = $_SESSION['nome'];
 					<img src="" alt="Imagem">
 				</div> -->
 				<div style="margin-top: 50px;">
-					<label id="nome"><?= $nome?></label>
+					<label id="nome"><?= $nome_professor?></label>
 				</div>
 				<div>
 					<a id="bt" class="btn btn-dark btn-sm" href="novo_aluno.php">Novo Aluno</a>
@@ -264,7 +296,6 @@ $nome = $_SESSION['nome'];
 									<option style="color:#0071c5" value="#0071c5">Azul Turquesa</option>
 									<option style="color:#FF4500" value="#FF4500">Laranja</option>
 									<option style="color:#8B4513" value="#8B4513">Marrom</option>
-									<option style="color:#1C1C1C" value="#1C1C1C">Preto</option>
 									<option style="color:#436EEE" value="#436EEE">Azul Royal</option>
 									<option style="color:#A020F0" value="#A020F0">Roxo</option>
 									<option style="color:#40E0D0" value="#40E0D0">Turquesa</option>

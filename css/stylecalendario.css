@@ -54,6 +54,12 @@ body .circle img{
     width: 100%;
 }
 
+#msg{
+    background-color: orange;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 #nome {
     margin-top: 3%;
     font-size: 20px;
