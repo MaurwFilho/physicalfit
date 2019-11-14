@@ -6,6 +6,8 @@ if (!isset($_SESSION['nome'])) {
 	header('Location: index.php');
 }
 
+unset($_SESSION['id_aluno']);
+
 require_once("conexao.php");
 
 $nome_professor = $_SESSION['nome'];
@@ -111,11 +113,17 @@ if (mysqli_num_rows($rs) > 1) {
 					info.jsEvent.preventDefault();
 
 					$('#visualizar #id').text(info.event.id);
+					$('#visualizar #id').val(info.event.id);
+
 					$('#visualizar #id_event').val(info.event.id);
 
 					$('#visualizar #title').text(info.event.title);
+					$('#visualizar #title').val(info.event.title);
 					$('#visualizar #start').text(info.event.start.toLocaleString());
+					$('#visualizar #start').val(info.event.start.toLocaleString());
 					$('#visualizar #end').text(info.event.end.toLocaleString());
+					$('#visualizar #end').val(info.event.end.toLocaleString());
+					$('#visualizar #color').val(info.event.backgroundColor);
 					$('#visualizar').modal('show');
 
 				},
@@ -189,6 +197,35 @@ if (mysqli_num_rows($rs) > 1) {
 				});
 			});
 
+			$('.btn-canc-vis').on("click", function() {
+				$('.visevent').slideToggle();
+				$('.formedit').slideToggle();
+			});
+
+			$('.btn-canc-edit').on("click", function() {
+				$('.formedit').slideToggle();
+				$('.visevent').slideToggle();
+			});
+
+			$("#editevent").on("submit", function (event) {
+				event.preventDefault();
+				$.ajax({
+					method: "POST",
+					url: "edit_event.php",
+					data: new FormData(this),
+					contentType: false,
+					processData: false,
+					success: function(retorna){
+						if (retorna['sit']) {
+							// $("#msg-cad").html(retorna['msg']);
+							location.reload();
+						} else {
+							$("#msg-edit").html(retorna['msg']);
+						}
+					}
+				});
+			});
+
 		});
 	</script>
 
@@ -245,25 +282,73 @@ if (mysqli_num_rows($rs) > 1) {
 				</div>
 				<div class="modal-body">
 					<form method="post" action="exc_event.php">
-						<dl class="row">
-							<dt class="col-sm-3">ID do evento</dt>
-							<dd class="col-sm-9" id="id"></dd>
-							<input type="hidden" name="id_event" id="id_event">
+						<div class="visevent">
+							<dl class="row">
+								<dt class="col-sm-3">ID do evento</dt>
+								<dd class="col-sm-9" id="id"></dd>
+								<input type="hidden" name="id_event" id="id_event">
 
-							<dt class="col-sm-3">Título do evento</dt>
-							<dd class="col-sm-9" id="title"></dd>
+								<dt class="col-sm-3">Título do evento</dt>
+								<dd class="col-sm-9" id="title"></dd>
 
-							<dt class="col-sm-3">Início do evento</dt>
-							<dd class="col-sm-9" id="start"></dd>
+								<dt class="col-sm-3">Início do evento</dt>
+								<dd class="col-sm-9" id="start"></dd>
 
-							<dt class="col-sm-3">Fim do evento</dt>
-							<dd class="col-sm-9" id="end"></dd>
-						</dl>
-						<hr>
-						<div>
+								<dt class="col-sm-3">Fim do evento</dt>
+								<dd class="col-sm-9" id="end"></dd>
+							</dl>
+							<button type="button" class="btn btn-warning btn-canc-vis">Editar</button>
 							<input type="submit" name="excluir" class="btn btn-danger" value="Excluir" onclick="return confirm('Quer mesmo excluir este evento?')">
 						</div>
 					</form>
+					<div class="formedit">
+						<span id="msg-edit"></span>
+						<form id="editevent" method="POST">
+							<input type="hidden" name="id" id="id">
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">Título</label>
+								<div class="col-sm-10">
+									<input type="text" name="title" class="form-control" id="title" placeholder="Título do evento">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">Cor</label>
+								<div class="col-sm-10">
+									<select name="color" class="form-control" id="color">
+										<option value="">Selecione</option>
+										<option style="color:#FFD700" value="#FFD700">Amarelo</option>
+										<option style="color:#0071c5" value="#0071c5">Azul Turquesa</option>
+										<option style="color:#FF4500" value="#FF4500">Laranja</option>
+										<option style="color:#8B4513" value="#8B4513">Marrom</option>
+										<option style="color:#436EEE" value="#436EEE">Azul Royal</option>
+										<option style="color:#A020F0" value="#A020F0">Roxo</option>
+										<option style="color:#40E0D0" value="#40E0D0">Turquesa</option>
+										<option style="color:#228B22" value="#228B22">Verde</option>
+										<option style="color:#8B0000" value="#8B0000">Vermelho</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">Início do evento</label>
+								<div class="col-sm-10">
+									<input type="text" name="start" class="form-control" id="start" onkeypress="DataHora(event, this)">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">Final do evento</label>
+								<div class="col-sm-10">
+									<input type="text" name="end" class="form-control" id="end" onkeypress="DataHora(event, this)">
+								</div>
+							</div>
+							<hr>
+							<div class="form-group row">
+								<div class="col-sm-10">
+									<button type="button" class="btn btn-primary btn-canc-edit">Cancelar</button>
+									<button type="submit" name="CadEvent" id="CadEvent" value="CadEvent" class="btn btn-success">Cadastrar</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>PhysicalFit</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/styleindex.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="icon" type="imagem/png" href="img/icone.png"/>
 </head>

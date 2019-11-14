@@ -15,6 +15,29 @@ $sql = new Sql();
 $del = 0;
 $exibe = 0;
 
+if (isset($_SESSION['id_aluno'])) {
+    $id = $_SESSION['id_aluno'];
+    $query = "SELECT * FROM aluno WHERE idaluno = $id;";
+    $result = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($result)){
+        $nome = $row['nome'];
+        $nascimento = $row['nascimento'];
+        $nascimento = date( 'd-m-Y' , strtotime( $nascimento ) );
+        $objetivo = $row['objetivo'];
+        $sexo = $row['sexo'];
+    }
+    $query = "SELECT * FROM avaliacao WHERE aluno_idaluno = $id ORDER BY idavaliacao DESC LIMIT 1;";
+    $rs = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($rs)){
+        $ultava = $row['data_avaliacao'];
+        $ultava = date( 'd-m-Y' , strtotime( $ultava ) );
+        $estatura = $row['estatura'];
+        $estatura = str_replace('.', ',', $estatura);
+        $peso = $row['peso'];
+        $peso = str_replace('.', ',', $peso);
+    }
+}
+
 if (isset($_POST['buscar'])) {
     if(isset($_POST['nomes'])){
         $id = $_POST['nomes'];
@@ -142,25 +165,27 @@ if (isset($_POST['buscar_avaliacao'])) {
 }
 
 if (isset($_POST['exbmedidas'])) {
-    $id = $_SESSION['id_aluno'];
-    $query = "SELECT * FROM aluno WHERE idaluno = $id;";
-    $result = mysqli_query($conn, $query);
-    while($row = mysqli_fetch_array($result)){
-        $nome = $row['nome'];
-        $nascimento = $row['nascimento'];
-        $nascimento = date( 'd-m-Y' , strtotime( $nascimento ) );
-        $objetivo = $row['objetivo'];
-        $sexo = $row['sexo'];
-    }
-    $query = "SELECT * FROM avaliacao WHERE aluno_idaluno = $id ORDER BY idavaliacao DESC LIMIT 1;";
-    $rs = mysqli_query($conn, $query);
-    while($row = mysqli_fetch_array($rs)){
-        $ultava = $row['data_avaliacao'];
-        $ultava = date( 'd-m-Y' , strtotime( $ultava ) );
-        $estatura = $row['estatura'];
-        $estatura = str_replace('.', ',', $estatura);
-        $peso = $row['peso'];
-        $peso = str_replace('.', ',', $peso);
+    if (isset($_POST['id_aluno'])){
+        $id = $_SESSION['id_aluno'];
+        $query = "SELECT * FROM aluno WHERE idaluno = $id;";
+        $result = mysqli_query($conn, $query);
+        while($row = mysqli_fetch_array($result)){
+            $nome = $row['nome'];
+            $nascimento = $row['nascimento'];
+            $nascimento = date( 'd-m-Y' , strtotime( $nascimento ) );
+            $objetivo = $row['objetivo'];
+            $sexo = $row['sexo'];
+        }
+        $query = "SELECT * FROM avaliacao WHERE aluno_idaluno = $id ORDER BY idavaliacao DESC LIMIT 1;";
+        $rs = mysqli_query($conn, $query);
+        while($row = mysqli_fetch_array($rs)){
+            $ultava = $row['data_avaliacao'];
+            $ultava = date( 'd-m-Y' , strtotime( $ultava ) );
+            $estatura = $row['estatura'];
+            $estatura = str_replace('.', ',', $estatura);
+            $peso = $row['peso'];
+            $peso = str_replace('.', ',', $peso);
+        }
     }
     if (!isset($_SESSION['id_aluno'])){
         header('Location: gerenciaralunos.php');
@@ -206,7 +231,7 @@ if (isset($_POST['exbmedidas'])) {
     </div>
 
     <div id="voltar">
-        <a class="btn btn-sm" href="calendario.php" style="color: #444;">Voltar</a>
+        <a class="btn btn-sm" href="calendario.php" style="color: #444; font-weight: bold;">Voltar</a>
     </div>
 
     <form action="#" method="post">
@@ -217,7 +242,8 @@ if (isset($_POST['exbmedidas'])) {
 
                 <select id="select-nome" name="nomes">
                     <?php 
-                    $query = "SELECT * FROM aluno";
+                    $id = $_SESSION['id_professor'];
+                    $query = "SELECT * FROM aluno WHERE professor_idprofessor = $id;";
                     $result = mysqli_query($conn, $query);
                     ?>
                     <option value=null></option>
@@ -248,7 +274,7 @@ if (isset($_POST['exbmedidas'])) {
                 <input type="text" id="sexo" value="<?php if(isset($sexo)) echo "  ".$sexo ?>" placeholder="  Sexo" disabled>
             </div>
             <div>
-                <input type="text" id="ultimaav" value="<?php if(isset($ultava)) echo "  ".$ultava ?>" placeholder="  Ultima Avaliação" disabled>
+                <input type="text" id="ultimaav" value="<?php if(isset($ultava)) echo "  Ultima Avaliação: ".$ultava ?>" placeholder="  Ultima Avaliação" disabled>
                 <input <?php if(!isset($nome)) echo "hidden" ?> type="submit" id="excluir" name="excluir" class="btn btn-dark btn-sm" value="Excluir Aluno" onclick="return confirm('Quer mesmo excluir este aluno?')">
             </div>
 
@@ -279,7 +305,7 @@ if (isset($_POST['exbmedidas'])) {
                     ?>
 
                     <?php while($row = mysqli_fetch_array($result)){ ?>
-                        <option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y' , strtotime( $row['data_avaliacao'] ) )  ?></option>
+                        <option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y H:i:s' , strtotime( $row['data_avaliacao'] ) )  ?></option>
                     <?php }
                     ?>
                 </select>

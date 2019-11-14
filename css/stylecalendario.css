@@ -17,15 +17,15 @@ body {
   font-size: 14px;
 }
 
-body .col-md-9 {
+body .col-md-9{
     padding: 0;
 }
 
-body .col-md-3 {
+body .col-md-3{
     padding: 0;
 }
 
-#calendar {
+#calendar{
   background-color: rgba(255, 255, 255, .9);
   max-width: 900px;
   margin: 0 auto;
@@ -54,19 +54,27 @@ body .circle img{
     width: 100%;
 }
 
+.visevent{
+    display: block;
+}
+
+.formedit{
+    display: none;
+}
+
 #msg{
     background-color: orange;
     font-weight: bold;
     font-size: 15px;
 }
 
-#nome {
+#nome{
     margin-top: 3%;
     font-size: 20px;
     color: #353b48;
 }
 
-#bt {
+#bt{
     margin-top: 10%;
     padding: 10px;
     border-radius: 30px;

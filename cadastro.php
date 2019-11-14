@@ -2,9 +2,7 @@
 
 $register = isset($_GET['register']) ? $_GET['register'] : 0;
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,9 +39,6 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
 			</div>
 			<div>
 				<?php 
-				if ($register == 1) {
-					echo '<font color="#444"><strong>CADASTRADO COM SUCESSO</strong></font>';
-				}
 				if ($register == 2) {
 					echo '<font color="#444"><strong>NÃO FOI POSSIVEL CADASTRAR</strong></font>';
 				}

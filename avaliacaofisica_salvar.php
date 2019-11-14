@@ -77,7 +77,7 @@ $result = $sql->select("CALL avaliacao_insert(:c_pesogordo, :c_tricipital, :c_su
 
 
 if ($result) {
-	header('Location: avaliacaofisica.php?register=1');
+	header('Location: gerenciaralunos.php');
 } else {
 	header('Location: avaliacaofisica.php?register=2');
 }

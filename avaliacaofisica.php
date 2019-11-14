@@ -34,9 +34,6 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
     </header>
     <div style="text-align: center;">
         <?php 
-        if ($register == 1) {
-            echo '<font color="#444"><strong>SALVO COM SUCESSO</strong></font>';
-        }
         if ($register == 2) {
             echo '<font color="#444"><strong>NÃO FOI POSSÍVEL SALVAR AVALIAÇÃO</strong></font>';
         }
