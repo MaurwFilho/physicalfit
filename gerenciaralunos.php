@@ -187,7 +187,7 @@ if (isset($_POST['exbmedidas'])) {
             $peso = str_replace('.', ',', $peso);
         }
     }
-    if (!isset($_SESSION['id_aluno'])){
+    if (!isset($_SESSION['id_aluno']) || $_SESSION['id_aluno'] == 0){
         header('Location: gerenciaralunos.php');
     } else {
         $exibe = 1;

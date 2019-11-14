@@ -6,7 +6,7 @@ if (!isset($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
-if (!isset($_SESSION['id_aluno'])) {
+if (!isset($_SESSION['id_aluno']) || $_SESSION['id_aluno'] == 0) {
     header('Location: gerenciaralunos.php');
 }
 
