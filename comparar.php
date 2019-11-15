@@ -146,7 +146,7 @@ if (isset($_POST['comparar'])) {
 				?>
 
 				<?php while($row = mysqli_fetch_array($result)){ ?>
-					<option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y' , strtotime( $row['data_avaliacao'] ) )  ?></option>
+					<option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y H:i:s' , strtotime( $row['data_avaliacao'] ) )  ?></option>
 				<?php }
 				?>
 			</select>
@@ -157,7 +157,7 @@ if (isset($_POST['comparar'])) {
 				?>
 
 				<?php while($row = mysqli_fetch_array($result)){ ?>
-					<option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y' , strtotime( $row['data_avaliacao'] ) )  ?></option>
+					<option value="<?php echo $row['idavaliacao'] ?>"><?php echo date( 'd-m-Y H:i:s' , strtotime( $row['data_avaliacao'] ) )  ?></option>
 				<?php }
 				?>
 			</select>

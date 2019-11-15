@@ -17,9 +17,8 @@ body{
 }
 
 body .container{
-    width: 550px;
+    width: 730px;
     height: 100%;
-    margin-top: 1%;
 }
 
 #voltar{
@@ -53,7 +52,7 @@ body .container{
     height: 35px;
     width: 265px;
     margin-top: 1%;
-    margin-left: 5%;
+    margin-left: 1%;
     border-width: 0;
 }
 
@@ -85,13 +84,60 @@ body .circle{
     overflow: hidden;
 }
 
-#lbl {
+#lbl{
     color: grey;
     height: 35px;
     width: 400px;
-    margin-left: 5%;
+    margin-left: 1%;
     font-size: 20px;
     margin-top: 0;
+    margin-bottom: 0;
+}
+
+#labels{
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+#lbl-nascimento{
+    color: #444;
+    margin-left: 2%;
+    margin-bottom: 0;
+}
+
+#lbl-estatura{
+    color: #444;
+    margin-left: 6.5%;
+    margin-bottom: 0;
+}
+
+#lbl-peso{
+    color: #444;
+    margin-left: 10.5%;
+    margin-bottom: 0;
+}
+
+#lbl-objetivo{
+    color: #444;
+    margin-left: 2%;
+    margin-bottom: 0;
+}
+
+#lbl-sexo{
+    color: #444;
+    margin-left: 29.5%;
+    margin-bottom: 0;
+}
+
+#lbl-ult{
+    color: #444;
+    margin-left: 2%;
+    margin-bottom: 0;
+}
+
+#lbl-nome{
+    color: #444;
+    margin-left: 2%;
     margin-bottom: 0;
 }
 
@@ -99,8 +145,7 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 400px;
-    margin-top: 1%;
-    margin-left: 5%;
+    margin-left: 1%;
     background-color: white;
     border-width: 0;
     font-weight: bold;
@@ -110,8 +155,7 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 125px;
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-left: 1%;
     background-color: white;
     border-width: 0;
     font-weight: bold;
@@ -121,7 +165,6 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 125px;
-    margin-top: 3%;
     margin-left: 1.5%;
     background-color: white;
     border-width: 0;
@@ -132,7 +175,6 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 125px;
-    margin-top: 3%;
     margin-left: 1.5%;
     background-color: white;
     border-width: 0;
@@ -143,7 +185,6 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 125px;
-    margin-top: 3%;
     margin-left: 1.5%;
     background-color: white;
     border-width: 0;
@@ -154,8 +195,7 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 265px;
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-left: 1%;
     background-color: white;
     border-width: 0;
     font-weight: bold;
@@ -165,8 +205,7 @@ body .circle{
     border-radius: 30px;
     height: 35px;
     width: 265px;
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-left: 1%;
     background-color: white;
     border-width: 0;
     font-weight: bold;
@@ -193,7 +232,7 @@ body .circle{
 
 #novaav {
     margin-top: 6%;
-    margin-left: 5%;
+    margin-left: 1%;
     border-radius: 30px;
     width: 125px;
     height: 40px;
@@ -222,7 +261,7 @@ body .circle{
 
 #treino{
     margin-top: 1.5%;
-    margin-left: 5%;
+    margin-left: 1%;
     border-radius: 30px;
     width: 125px;
     height: 40px;
