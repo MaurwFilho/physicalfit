@@ -264,7 +264,7 @@ if (mysqli_num_rows($rs) > 1) {
 					<a id="bt" class="btn btn-dark btn-sm" href="sair.php">Sair</a>
 				</div>
 				<div id="sair">
-					<a class="btn btn-default btn-sm" href="ajuda.php">Ajuda</a>
+					<!-- <a class="btn btn-default btn-sm" href="ajuda.php">Ajuda</a> -->
 				</div>
 			</div>
 		</div>

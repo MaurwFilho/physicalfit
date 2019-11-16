@@ -64,8 +64,8 @@ $id = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : null;
 
 
             <div>
-                <label id="perimetros">Perímetros</label>
-                <label id="ccdc">Composição Corporal por Dobras Cotâneas</label>
+                <label id="perimetros">Perímetros (cm)</label>
+                <label id="ccdc">Composição Corporal por Dobras Cotâneas (cm)</label>
             </div>
             <div>
                 <input type="text" name="bicepsd" id="baa" placeholder="  Biceps Direito">

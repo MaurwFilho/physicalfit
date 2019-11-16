@@ -34,6 +34,9 @@ $register = isset($_GET['register']) ? $_GET['register'] : 0;
 			<div class="form-group">
 				<button type="submit" id="bt" class="btn btn-dark btn-sm">Cadastrar</button>
 			</div>
+			<div>
+				<hr>
+			</div>
 			<div id="login" class="form-group">
 				<a id="lo" class="btn btn-default btn-sm" href="login.php">Login</a>
 			</div>

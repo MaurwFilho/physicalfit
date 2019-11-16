@@ -66,7 +66,6 @@ body form{
     border-radius: 10%;
     background-color: white;
     text-align: center;
-    filter: opacity(75%);
 }
 
 #mid{
@@ -76,7 +75,6 @@ body form{
     border-radius: 10%;
     background-color: white;
     text-align: center;
-    filter: opacity(75%);
 }
 
 #right{
@@ -86,7 +84,6 @@ body form{
     border-radius: 10%;
     background-color: white;
     text-align: center;
-    filter: opacity(75%);
 }
 
 #compleft{

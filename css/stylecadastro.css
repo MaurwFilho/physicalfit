@@ -23,8 +23,12 @@ body .container{
 	color: #333;
 }
 
-#login {
-	margin-top: 50px;
+.form-group {
+	margin-bottom: 0;
+}
+
+hr {
+	margin-top: 9%;
 }
 
 #lo{

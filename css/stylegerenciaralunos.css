@@ -1,398 +1,398 @@
 header{
-    background-color: #223543;
-    text-align: center;
-    height: 100px;
+	background-color: #223543;
+	text-align: center;
+	height: 100px;
 }
 
 header h1{
-    height: 100%;
-    color: white;
-    padding: 25px 25px;
+	height: 100%;
+	color: white;
+	padding: 25px 25px;
 }
 
 body{
-    background-image: url('../img/physicalfit12.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url('../img/physicalfit12.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 body .container{
-    width: 730px;
-    height: 100%;
+	width: 600px;
+	height: 100%;
 }
 
 #voltar{
-    text-align: end;
-    margin-right: 2%;
-    margin-top: 10px;
+	text-align: end;
+	margin-right: 2%;
+	margin-top: 10px;
 }
 
 #left{
-    width: 550px;
-    height: 100%;
-    margin-top: 3%;
+	width: 550px;
+	height: 100%;
+	margin-top: 3%;
 }
 
 #right{
-    width: 550px;
-    height: 100%;
-    margin-top: 1%;
-    margin-right: 5%;
-    padding-bottom: 5%;
-    background-color: white;
-    filter: opacity(70%);
-    text-align: center;
-    border-radius: 10%;
-    border-width: 7px;
-    border-color: black;
+	width: 550px;
+	height: 100%;
+	margin-top: 1%;
+	margin-right: 5%;
+	padding-bottom: 5%;
+	background-color: white;
+	filter: opacity(70%);
+	text-align: center;
+	border-radius: 10%;
+	border-width: 7px;
+	border-color: black;
 }
 
 #select-nome{
-    border-radius: 30px;
-    height: 35px;
-    width: 265px;
-    margin-top: 1%;
-    margin-left: 1%;
-    border-width: 0;
+	border-radius: 30px;
+	height: 35px;
+	width: 265px;
+	margin-top: 1%;
+	margin-left: 1%;
+	border-width: 0;
 }
 
 #select-avaliacao{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 3%;
-    margin-left: 5%;
-    border-width: 0;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 3%;
+	margin-left: 5%;
+	border-width: 0;
 }
 
 #buscar {
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-bottom: 4px;
-    margin-left: 1.5%;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-bottom: 4px;
+	margin-left: 1.5%;
+	font-weight: bold;
 }
 
 body .circle{
-    background-color: white;
-    width: 300px;
-    height: 200px;
-    border-radius: 50%;
-    margin-left: 14%;
-    margin-top: 15px;
-    overflow: hidden;
+	background-color: white;
+	width: 300px;
+	height: 200px;
+	border-radius: 50%;
+	margin-left: 14%;
+	margin-top: 15px;
+	overflow: hidden;
 }
 
 #lbl{
-    color: grey;
-    height: 35px;
-    width: 400px;
-    margin-left: 1%;
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
+	color: grey;
+	height: 35px;
+	width: 400px;
+	margin-left: 1%;
+	font-size: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 #labels{
-    font-weight: bold;
-    margin-top: 2%;
+	font-weight: bold;
+	margin-top: 2%;
 }
 
 #lbl-nascimento{
-    color: #444;
-    margin-left: 2%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 2%;
+	margin-bottom: 0;
 }
 
 #lbl-estatura{
-    color: #444;
-    margin-left: 6.5%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 7.5%;
+	margin-bottom: 0;
 }
 
 #lbl-peso{
-    color: #444;
-    margin-left: 10.5%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 12.5%;
+	margin-bottom: 0;
 }
 
 #lbl-objetivo{
-    color: #444;
-    margin-left: 2%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 2%;
+	margin-bottom: 0;
 }
 
 #lbl-sexo{
-    color: #444;
-    margin-left: 29.5%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 36.5%;
+	margin-bottom: 0;
 }
 
 #lbl-ult{
-    color: #444;
-    margin-left: 2%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 2%;
+	margin-bottom: 0;
 }
 
 #lbl-nome{
-    color: #444;
-    margin-left: 2%;
-    margin-bottom: 0;
+	color: #444;
+	margin-left: 2%;
+	margin-bottom: 0;
 }
 
 #nome{
-    border-radius: 30px;
-    height: 35px;
-    width: 400px;
-    margin-left: 1%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 400px;
+	margin-left: 1%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #idade{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-left: 1%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-left: 1%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #estatura{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-left: 1.5%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-left: 1.5%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #peso{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-left: 1.5%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-left: 1.5%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #sexo{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-left: 1.5%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-left: 1.5%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #ultimaav{
-    border-radius: 30px;
-    height: 35px;
-    width: 265px;
-    margin-left: 1%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 265px;
+	margin-left: 1%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #objetivo{
-    border-radius: 30px;
-    height: 35px;
-    width: 265px;
-    margin-left: 1%;
-    background-color: white;
-    border-width: 0;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 265px;
+	margin-left: 1%;
+	background-color: white;
+	border-width: 0;
+	font-weight: bold;
 }
 
 #excluir{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    font-weight: bold;
-    margin-left: 1.5%;
-    margin-bottom: 6px;
-    border-width: 0;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	font-weight: bold;
+	margin-left: 1.5%;
+	margin-bottom: 6px;
+	border-width: 0;
 }
 
 #excava{
-    border-radius: 30px;
-    height: 45px;
-    width: 145px;
-    font-weight: bold;
-    margin-left: 1.5%;
-    border-width: 0;
+	border-radius: 30px;
+	height: 45px;
+	width: 145px;
+	font-weight: bold;
+	margin-left: 1.5%;
+	border-width: 0;
 }
 
 #novaav {
-    margin-top: 6%;
-    margin-left: 1%;
-    border-radius: 30px;
-    width: 125px;
-    height: 40px;
-    font-weight: bold;
-    line-height: 0;
+	margin-top: 6%;
+	margin-left: 1%;
+	border-radius: 30px;
+	width: 125px;
+	height: 40px;
+	font-weight: bold;
+	line-height: 0;
 }
 
 #comparar{
-    margin-top: 6%;
-    margin-left: 1.5%;
-    border-radius: 30px;
-    width: 125px;
-    height: 40px;
-    font-weight: bold;
-    line-height: 0;
+	margin-top: 6%;
+	margin-left: 1.5%;
+	border-radius: 30px;
+	width: 125px;
+	height: 40px;
+	font-weight: bold;
+	line-height: 0;
 }
 
 #exbtreino{
-    margin-top: 6%;
-    margin-left: 1.5%;
-    border-radius: 30px;
-    width: 125px;
-    height: 40px;
-    font-weight: bold;
+	margin-top: 6%;
+	margin-left: 1.5%;
+	border-radius: 30px;
+	width: 125px;
+	height: 40px;
+	font-weight: bold;
 }
 
 #treino{
-    margin-top: 1.5%;
-    margin-left: 1%;
-    border-radius: 30px;
-    width: 125px;
-    height: 40px;
-    font-weight: bold;
-    line-height: 0;
+	margin-top: 1.5%;
+	margin-left: 1%;
+	border-radius: 30px;
+	width: 125px;
+	height: 40px;
+	font-weight: bold;
+	line-height: 0;
 }
 
 #exibirmedidas{
-    margin-top: 1.5%;
-    margin-left: 1.5%;
-    border-radius: 30px;
-    width: 125px;
-    height: 40px;
-    font-weight: bold;
-    line-height: 0;
+	margin-top: 1.5%;
+	margin-left: 1.5%;
+	border-radius: 30px;
+	width: 125px;
+	height: 40px;
+	font-weight: bold;
+	line-height: 0;
 }
 
 #inicio{
-    margin-top: 1.5%;
-    margin-left: 1.5%;
-    border-radius: 30px;
-    width: 125px;
-    height: 40px;
-    font-weight: bold;
-    line-height: 0;
+	margin-top: 1.5%;
+	margin-left: 1.5%;
+	border-radius: 30px;
+	width: 125px;
+	height: 40px;
+	font-weight: bold;
+	line-height: 0;
 }
 
 #tei{
-    margin-bottom: 10%;
+	margin-bottom: 10%;
 }
 
 #ppg{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 3%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: black;
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 3%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: black;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #taa{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 1%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: black;
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 1%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: black;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #ssi{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 1%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: black; 
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 1%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: black; 
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #pcc{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 1%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: black; 
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 1%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: black; 
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #baa{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 3%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: darkblue; 
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 3%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: darkblue; 
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #baq{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 1%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: darkblue;
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 1%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: darkblue;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #cpf{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 1%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: darkblue; 
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 1%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: darkblue; 
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 #cpp{
-    border-radius: 30px;
-    height: 35px;
-    width: 125px;
-    margin-top: 1%;
-    margin-left: 5%;
-    border-width: 0;
-    background-color: darkblue;
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+	border-radius: 30px;
+	height: 35px;
+	width: 125px;
+	margin-top: 1%;
+	margin-left: 5%;
+	border-width: 0;
+	background-color: darkblue;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
 }

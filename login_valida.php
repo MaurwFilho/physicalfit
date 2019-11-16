@@ -6,6 +6,7 @@ require_once("Sql.php");
 
 $email = isset($_POST['email']) ? $_POST['email'] : "";
 $senha = isset($_POST['senha']) ? $_POST['senha'] : "";
+$senha = md5($senha);
 
 $sql = new Sql();
 

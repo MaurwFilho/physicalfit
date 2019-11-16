@@ -162,6 +162,32 @@ if (isset($_POST['buscar_avaliacao'])) {
 	$quadril = $rs[0]['p_quadril'];
 	$torax = $rs[0]['p_torax'];
 	$cintura = $rs[0]['p_cintura'];
+
+	if ($pesogordo == 0) unset($pesogordo);
+	if ($tricipital == 0) unset($tricipital);
+	if ($subscapular == 0) unset($subscapular);
+	if ($peitoral == 0) unset($peitoral);
+	if ($abdominal == 0) unset($abdominal);
+	if ($suprailiaca == 0) unset($suprailiaca);
+	if ($ccoxad == 0) unset($ccoxad);
+	if ($gorduraatual == 0) unset($gorduraatual);
+	if ($auxiliarmedia == 0) unset($auxiliarmedia);
+	if ($imc == 0) unset($imc);
+	if ($ccoxae == 0) unset($ccoxae);
+	if ($pesomagro == 0) unset($pesomagro);
+	if ($bicepsd == 0) unset($bicepsd);
+	if ($bicepse == 0) unset($bicepse);
+	if ($pcoxad == 0) unset($pcoxad);
+	if ($pcoxae == 0) unset($pcoxae);
+	if ($antebracod == 0) unset($antebracod);
+	if ($antebracoe == 0) unset($antebracoe);
+	if ($panturrilhad == 0) unset($panturrilhad);
+	if ($panturrilhae == 0) unset($panturrilhae);
+	if ($abdomen == 0) unset($abdomen);
+	if ($quadril == 0) unset($quadril);
+	if ($torax == 0) unset($torax);
+	if ($cintura == 0) unset($cintura);
+	
 }
 
 if (isset($_POST['exbmedidas'])) {
@@ -327,44 +353,44 @@ if (isset($_POST['exbmedidas'])) {
     		</div>
     		<div>
     			<input type="hidden" name="id_avaliacao" value="<?php if(isset($id_avaliacao)) echo $id_avaliacao ?>">
-    			<input type="text" name="pesogordo" id="ppg" value="  Peso Gordo: <?php if(isset($pesogordo)) echo $pesogordo ?>" placeholder="  Peso Gordo" disabled>
-    			<input type="text" name="pesomagro" id="ppg" value="  Peso Magro: <?php if(isset($pesomagro)) echo $pesomagro ?>" placeholder="  Peso Magro" disabled>
-    			<input type="text" name="gorduraatual" id="ppg" value="  Gordura Atual: <?php if(isset($gorduraatual)) echo $gorduraatual ?>" placeholder="  Gordura Atual" disabled>
+    			<input <?php if(!isset($pesogordo)) echo "hidden" ?> type="text" name="pesogordo" id="ppg" value="  Peso Gordo: <?php if(isset($pesogordo)) echo $pesogordo.'cm' ?>" placeholder="  Peso Gordo" disabled>
+    			<input <?php if(!isset($pesomagro)) echo "hidden" ?> type="text" name="pesomagro" id="ppg" value="  Peso Magro: <?php if(isset($pesomagro)) echo $pesomagro.'cm' ?>" placeholder="  Peso Magro" disabled>
+    			<input <?php if(!isset($gorduraatual)) echo "hidden" ?> type="text" name="gorduraatual" id="ppg" value="  Gordura Atual: <?php if(isset($gorduraatual)) echo $gorduraatual.'cm' ?>" placeholder="  Gordura Atual" disabled>
     		</div>
     		<div>
-    			<input type="text" name="tricipital" id="taa" value="  Tricipital: <?php if(isset($tricipital)) echo $tricipital ?>" placeholder="  Tricipital" disabled>
-    			<input type="text" name="abdominal" id="taa" value="  Abdominal: <?php if(isset($abdominal)) echo $abdominal ?>" placeholder="  Abdominal" disabled>
-    			<input type="text" name="auxiliarmedia" value="  Auxiliar Média: <?php if(isset($auxiliarmedia)) echo $auxiliarmedia ?>" id="taa" placeholder="  Auxiliar Média" disabled> 
+    			<input <?php if(!isset($tricipital)) echo "hidden" ?> type="text" name="tricipital" id="taa" value="  Tricipital: <?php if(isset($tricipital)) echo $tricipital.'cm' ?>" placeholder="  Tricipital" disabled>
+    			<input <?php if(!isset($abdominal)) echo "hidden" ?> type="text" name="abdominal" id="taa" value="  Abdominal: <?php if(isset($abdominal)) echo $abdominal.'cm' ?>" placeholder="  Abdominal" disabled>
+    			<input <?php if(!isset($auxiliarmedia)) echo "hidden" ?> type="text" name="auxiliarmedia" value="  Auxiliar Média: <?php if(isset($auxiliarmedia)) echo $auxiliarmedia.'cm' ?>" id="taa" placeholder="  Auxiliar Média" disabled> 
     		</div>
     		<div>
-    			<input type="text" name="subscapular" id="ssi" value="  Subscapular: <?php if(isset($subscapular)) echo $subscapular ?>" placeholder="  Subscapular" disabled>
-    			<input type="text" name="suprailiaca" id="ssi" value="  Supra-Iliaca: <?php if(isset($suprailiaca)) echo $suprailiaca ?>" placeholder="  Supra-Iliaca" disabled>
-    			<input type="text" name="imc" id="ssi" value="  IMC: <?php if(isset($imc)) echo $imc ?>" placeholder="  IMC" disabled> 
+    			<input <?php if(!isset($subscapular)) echo "hidden" ?> type="text" name="subscapular" id="ssi" value="  Subscapular: <?php if(isset($subscapular)) echo $subscapular.'cm' ?>" placeholder="  Subscapular" disabled>
+    			<input <?php if(!isset($suprailiaca)) echo "hidden" ?> type="text" name="suprailiaca" id="ssi" value="  Supra-Iliaca: <?php if(isset($suprailiaca)) echo $suprailiaca.'cm' ?>" placeholder="  Supra-Iliaca" disabled>
+    			<input <?php if(!isset($imc)) echo "hidden" ?> type="text" name="imc" id="ssi" value="  IMC: <?php if(isset($imc)) echo $imc.'cm' ?>" placeholder="  IMC" disabled> 
     		</div>
     		<div>
-    			<input type="text" name="peitoral" id="pcc" value="  Peitoral: <?php if(isset($peitoral)) echo $peitoral ?>" placeholder="  Peitoral" disabled>
-    			<input type="text" name="coxad" id="pcc" value="  Coxa Direita: <?php if(isset($ccoxad)) echo $ccoxad ?>" placeholder="  Coxa Direita" disabled>
-    			<input type="text" name="coxae" id="pcc" value="  Coxa Esquerda: <?php if(isset($ccoxae)) echo $ccoxae ?>" placeholder="  Coxa Esquerda" disabled>     
+    			<input <?php if(!isset($peitoral)) echo "hidden" ?> type="text" name="peitoral" id="pcc" value="  Peitoral: <?php if(isset($peitoral)) echo $peitoral.'cm' ?>" placeholder="  Peitoral" disabled>
+    			<input <?php if(!isset($ccoxad)) echo "hidden" ?> type="text" name="coxad" id="pcc" value="  Coxa Direita: <?php if(isset($ccoxad)) echo $ccoxad.'cm' ?>" placeholder="  Coxa Direita" disabled>
+    			<input <?php if(!isset($ccoxae)) echo "hidden" ?> type="text" name="coxae" id="pcc" value="  Coxa Esquerda: <?php if(isset($ccoxae)) echo $ccoxae.'cm' ?>" placeholder="  Coxa Esquerda" disabled>     
     		</div>
     		<div>
-    			<input type="text" name="bicepsd" id="baa" value="  Biceps Direito: <?php if(isset($bicepsd)) echo $bicepsd ?>" placeholder="  Biceps Direito" disabled>
-    			<input type="text" name="antebracod" id="baa" value="  Antebraço D: <?php if(isset($antebracod)) echo $antebracod ?>" placeholder="  Antebraço Direito" disabled>
-    			<input type="text" name="abdomen" id="baa" value="  Abdomen: <?php if(isset($abdomen)) echo $abdomen ?>" placeholder="  Abdomen" disabled>  
+    			<input <?php if(!isset($bicepsd)) echo "hidden" ?> type="text" name="bicepsd" id="baa" value="  Biceps D: <?php if(isset($bicepsd)) echo $bicepsd.'cm' ?>" placeholder="  Biceps Direito" disabled>
+    			<input <?php if(!isset($antebracod)) echo "hidden" ?> type="text" name="antebracod" id="baa" value="  Antebraço D: <?php if(isset($antebracod)) echo $antebracod.'cm' ?>" placeholder="  Antebraço Direito" disabled>
+    			<input <?php if(!isset($abdomen)) echo "hidden" ?> type="text" name="abdomen" id="baa" value="  Abdomen: <?php if(isset($abdomen)) echo $abdomen.'cm' ?>" placeholder="  Abdomen" disabled>  
     		</div>
     		<div>
-    			<input type="text" name="bicepse" id="baq" value="  Biceps Esquerdo: <?php if(isset($bicepse)) echo $bicepse ?>" placeholder="  Biceps Esquerdo" disabled>
-    			<input type="text" name="antebracoe" id="baq" value="  Antebraço E: <?php if(isset($antebracoe)) echo $antebracoe ?>" placeholder="  Antebraço Esquerdo" disabled>
-    			<input type="text" name="quadril" id="baq" value="  Quadril: <?php if(isset($quadril)) echo $quadril ?>" placeholder="  Quadril" disabled> 
+    			<input <?php if(!isset($bicepse)) echo "hidden" ?> type="text" name="bicepse" id="baq" value="  Biceps E: <?php if(isset($bicepse)) echo $bicepse.'cm' ?>" placeholder="  Biceps Esquerdo" disabled>
+    			<input <?php if(!isset($antebracoe)) echo "hidden" ?> type="text" name="antebracoe" id="baq" value="  Antebraço E: <?php if(isset($antebracoe)) echo $antebracoe.'cm' ?>" placeholder="  Antebraço Esquerdo" disabled>
+    			<input <?php if(!isset($quadril)) echo "hidden" ?> type="text" name="quadril" id="baq" value="  Quadril: <?php if(isset($quadril)) echo $quadril.'cm' ?>" placeholder="  Quadril" disabled> 
     		</div>
     		<div>
-    			<input type="text" name="coxad" id="cpf" value="  Coxa Direira: <?php if(isset($pcoxad)) echo $pcoxad ?>" placeholder="  Coxa Direira" disabled>
-    			<input type="text" name="panturrilhad" id="cpf" value="  Panturrilha D: <?php if(isset($panturrilhad)) echo $panturrilhad ?>" placeholder="  Panturrilha Direita" disabled>
-    			<input type="text" name="torax" id="cpf" value="  Torax: <?php if(isset($torax)) echo $torax ?>" placeholder="  Torax" disabled> 
+    			<input <?php if(!isset($pcoxad)) echo "hidden" ?> type="text" name="coxad" id="cpf" value="  Coxa Direira: <?php if(isset($pcoxad)) echo $pcoxad.'cm'?>" placeholder="  Coxa Direira" disabled>
+    			<input <?php if(!isset($panturrilhad)) echo "hidden" ?> type="text" name="panturrilhad" id="cpf" value="  Panturrilha D: <?php if(isset($panturrilhad)) echo $panturrilhad.'cm' ?>" placeholder="  Panturrilha Direita" disabled>
+    			<input <?php if(!isset($torax)) echo "hidden" ?> type="text" name="torax" id="cpf" value="  Torax: <?php if(isset($torax)) echo $torax.'cm' ?>" placeholder="  Torax" disabled> 
     		</div>
     		<div>
-    			<input type="text" name="coxae" id="cpp" value="  Coxa Esquerda: <?php if(isset($pcoxae)) echo $pcoxae ?>" placeholder="  Coxa Esquerda" disabled>
-    			<input type="text" name="panturrilhae" id="cpp" value="  Panturrilha E: <?php if(isset($panturrilhae)) echo $panturrilhae ?>" placeholder="  Panturrilha Esquerda" disabled>
-    			<input type="text" name="peso" id="cpp" value="  Cintura: <?php if(isset($cintura)) echo $cintura ?>" placeholder="  Cintura" disabled> 
+    			<input <?php if(!isset($pcoxae)) echo "hidden" ?> type="text" name="coxae" id="cpp" value="  Coxa Esquerda: <?php if(isset($pcoxae)) echo $pcoxae.'cm' ?>" placeholder="  Coxa Esquerda" disabled>
+    			<input <?php if(!isset($panturrilhae)) echo "hidden" ?> type="text" name="panturrilhae" id="cpp" value="  Panturrilha E: <?php if(isset($panturrilhae)) echo $panturrilhae.'cm' ?>" placeholder="  Panturrilha Esquerda" disabled>
+    			<input <?php if(!isset($cintura)) echo "hidden" ?> type="text" name="peso" id="cpp" value="  Cintura: <?php if(isset($cintura)) echo $cintura.'cm' ?>" placeholder="  Cintura" disabled> 
     		</div>
     		<hr>
     		<div>

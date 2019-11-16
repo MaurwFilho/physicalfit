@@ -64,7 +64,6 @@ body{
     border-radius: 10%;
     background-color: white;
     text-align: center;
-    filter: opacity(75%);
 }
 
 #mid{
@@ -74,7 +73,6 @@ body{
     border-radius: 10%;
     background-color: white;
     text-align: center;
-    filter: opacity(75%);
 }
 
 #right{
@@ -84,7 +82,6 @@ body{
     border-radius: 10%;
     background-color: white;
     text-align: center;
-    filter: opacity(75%);
 }
 
 #comptreino{

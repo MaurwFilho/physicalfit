@@ -183,109 +183,109 @@ if(isset($_POST['excluir'])) {
                 <div>
                     <label style="font-weight: bold;" for="">Treino A</label>
                 </div>
-                <input type="text" name="aexercicio1" id="comptreino" value="<?php if(isset($aexercicio1)) echo $aexercicio1 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes1" id="comptreino" value="<?php if(isset($arepeticoes1)) echo $arepeticoes1 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries1" id="comptreino" value="<?php if(isset($aseries1)) echo $aseries1 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio1" id="comptreino" value="<?php if(isset($aexercicio1)) echo '  '.$aexercicio1 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes1" id="comptreino" value="<?php if(isset($arepeticoes1)) echo '  '.$arepeticoes1 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries1" id="comptreino" value="<?php if(isset($aseries1)) echo '  '.$aseries1 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="aexercicio2" id="comptreino" value="<?php if(isset($aexercicio2)) echo $aexercicio2 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes2" id="comptreino" value="<?php if(isset($arepeticoes2)) echo $arepeticoes2 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries2" id="comptreino" value="<?php if(isset($aseries2)) echo $aseries2 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio2" id="comptreino" value="<?php if(isset($aexercicio2)) echo '  '.$aexercicio2 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes2" id="comptreino" value="<?php if(isset($arepeticoes2)) echo '  '.$arepeticoes2 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries2" id="comptreino" value="<?php if(isset($aseries2)) echo '  '.$aseries2 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="aexercicio3" id="comptreino" value="<?php if(isset($aexercicio3)) echo $aexercicio3 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes3" id="comptreino" value="<?php if(isset($arepeticoes3)) echo $arepeticoes3 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries3" id="comptreino" value="<?php if(isset($aseries3)) echo $aseries3 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio3" id="comptreino" value="<?php if(isset($aexercicio3)) echo '  '.$aexercicio3 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes3" id="comptreino" value="<?php if(isset($arepeticoes3)) echo '  '.$arepeticoes3 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries3" id="comptreino" value="<?php if(isset($aseries3)) echo '  '.$aseries3 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="aexercicio4" id="comptreino" value="<?php if(isset($aexercicio4)) echo $aexercicio4 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes4" id="comptreino" value="<?php if(isset($arepeticoes4)) echo $arepeticoes4 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries4" id="comptreino" value="<?php if(isset($aseries4)) echo $aseries4 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio4" id="comptreino" value="<?php if(isset($aexercicio4)) echo '  '.$aexercicio4 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes4" id="comptreino" value="<?php if(isset($arepeticoes4)) echo '  '.$arepeticoes4 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries4" id="comptreino" value="<?php if(isset($aseries4)) echo '  '.$aseries4 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="aexercicio5" id="comptreino" value="<?php if(isset($aexercicio5)) echo $aexercicio5 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes5" id="comptreino" value="<?php if(isset($arepeticoes5)) echo $arepeticoes5 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries5" id="comptreino" value="<?php if(isset($aseries5)) echo $aseries5 ?>" placeholder="  Séries"disabled>
+                <input type="text" name="aexercicio5" id="comptreino" value="<?php if(isset($aexercicio5)) echo '  '.$aexercicio5 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes5" id="comptreino" value="<?php if(isset($arepeticoes5)) echo '  '.$arepeticoes5 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries5" id="comptreino" value="<?php if(isset($aseries5)) echo '  '.$aseries5 ?>" placeholder="  Séries"disabled>
 
-                <input type="text" name="aexercicio6" id="comptreino" value="<?php if(isset($aexercicio6)) echo $aexercicio6 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes6" id="comptreino" value="<?php if(isset($arepeticoes6)) echo $arepeticoes6 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries6" id="comptreino" value="<?php if(isset($aseries6)) echo $aseries6 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio6" id="comptreino" value="<?php if(isset($aexercicio6)) echo '  '.$aexercicio6 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes6" id="comptreino" value="<?php if(isset($arepeticoes6)) echo '  '.$arepeticoes6 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries6" id="comptreino" value="<?php if(isset($aseries6)) echo '  '.$aseries6 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="aexercicio7" id="comptreino" value="<?php if(isset($aexercicio7)) echo $aexercicio7 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes7" id="comptreino" value="<?php if(isset($arepeticoes7)) echo $arepeticoes7 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries7" id="comptreino" value="<?php if(isset($aseries7)) echo $aseries7 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio7" id="comptreino" value="<?php if(isset($aexercicio7)) echo '  '.$aexercicio7 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes7" id="comptreino" value="<?php if(isset($arepeticoes7)) echo '  '.$arepeticoes7 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries7" id="comptreino" value="<?php if(isset($aseries7)) echo '  '.$aseries7 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="aexercicio8" id="comptreino" value="<?php if(isset($aexercicio8)) echo $aexercicio8 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="arepeticoes8" id="comptreino" value="<?php if(isset($arepeticoes8)) echo $arepeticoes8 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="aseries8" id="comptreino" value="<?php if(isset($aseries8)) echo $aseries8 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="aexercicio8" id="comptreino" value="<?php if(isset($aexercicio8)) echo '  '.$aexercicio8 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="arepeticoes8" id="comptreino" value="<?php if(isset($arepeticoes8)) echo '  '.$arepeticoes8 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="aseries8" id="comptreino" value="<?php if(isset($aseries8)) echo '  '.$aseries8 ?>" placeholder="  Séries" disabled>
             </div>
             <div id="mid" class="container">
                 <div>
                     <label style="font-weight: bold;" for="">Treino B</label>
                 </div>
-                <input type="text" name="bexercicio1" id="comptreino" value="<?php if(isset($bexercicio1)) echo $bexercicio1 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes1" id="comptreino" value="<?php if(isset($brepeticoes1)) echo $brepeticoes1 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries1" id="comptreino" value="<?php if(isset($bseries1)) echo $bseries1 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio1" id="comptreino" value="<?php if(isset($bexercicio1)) echo '  '.$bexercicio1 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes1" id="comptreino" value="<?php if(isset($brepeticoes1)) echo '  '.$brepeticoes1 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries1" id="comptreino" value="<?php if(isset($bseries1)) echo '  '.$bseries1 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio2" id="comptreino" value="<?php if(isset($bexercicio2)) echo $bexercicio2 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes2" id="comptreino" value="<?php if(isset($brepeticoes2)) echo $brepeticoes2 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries2" id="comptreino" value="<?php if(isset($bseries2)) echo $bseries2 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio2" id="comptreino" value="<?php if(isset($bexercicio2)) echo '  '.$bexercicio2 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes2" id="comptreino" value="<?php if(isset($brepeticoes2)) echo '  '.$brepeticoes2 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries2" id="comptreino" value="<?php if(isset($bseries2)) echo '  '.$bseries2 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio3" id="comptreino" value="<?php if(isset($bexercicio3)) echo $bexercicio3 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes3" id="comptreino" value="<?php if(isset($brepeticoes3)) echo $brepeticoes3 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries3" id="comptreino" value="<?php if(isset($bseries3)) echo $bseries3 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio3" id="comptreino" value="<?php if(isset($bexercicio3)) echo '  '.$bexercicio3 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes3" id="comptreino" value="<?php if(isset($brepeticoes3)) echo '  '.$brepeticoes3 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries3" id="comptreino" value="<?php if(isset($bseries3)) echo '  '.$bseries3 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio4" id="comptreino" value="<?php if(isset($bexercicio4)) echo $bexercicio4 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes4" id="comptreino" value="<?php if(isset($brepeticoes4)) echo $brepeticoes4 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries4" id="comptreino" value="<?php if(isset($bseries4)) echo $bseries4 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio4" id="comptreino" value="<?php if(isset($bexercicio4)) echo '  '.$bexercicio4 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes4" id="comptreino" value="<?php if(isset($brepeticoes4)) echo '  '.$brepeticoes4 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries4" id="comptreino" value="<?php if(isset($bseries4)) echo '  '.$bseries4 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio5" id="comptreino" value="<?php if(isset($bexercicio5)) echo $bexercicio5 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes5" id="comptreino" value="<?php if(isset($brepeticoes5)) echo $brepeticoes5 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries5" id="comptreino" value="<?php if(isset($bseries5)) echo $bseries5 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio5" id="comptreino" value="<?php if(isset($bexercicio5)) echo '  '.$bexercicio5 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes5" id="comptreino" value="<?php if(isset($brepeticoes5)) echo '  '.$brepeticoes5 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries5" id="comptreino" value="<?php if(isset($bseries5)) echo '  '.$bseries5 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio6" id="comptreino" value="<?php if(isset($bexercicio6)) echo $bexercicio6 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes6" id="comptreino" value="<?php if(isset($brepeticoes6)) echo $brepeticoes6 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries6" id="comptreino" value="<?php if(isset($bseries6)) echo $bseries6 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio6" id="comptreino" value="<?php if(isset($bexercicio6)) echo '  '.$bexercicio6 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes6" id="comptreino" value="<?php if(isset($brepeticoes6)) echo '  '.$brepeticoes6 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries6" id="comptreino" value="<?php if(isset($bseries6)) echo '  '.$bseries6 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio7" id="comptreino" value="<?php if(isset($bexercicio7)) echo $bexercicio7 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes7" id="comptreino" value="<?php if(isset($brepeticoes7)) echo $brepeticoes7 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries7" id="comptreino" value="<?php if(isset($bseries7)) echo $bseries7 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio7" id="comptreino" value="<?php if(isset($bexercicio7)) echo '  '.$bexercicio7 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes7" id="comptreino" value="<?php if(isset($brepeticoes7)) echo '  '.$brepeticoes7 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries7" id="comptreino" value="<?php if(isset($bseries7)) echo '  '.$bseries7 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="bexercicio8" id="comptreino" value="<?php if(isset($bexercicio8)) echo $bexercicio8 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="brepeticoes8" id="comptreino" value="<?php if(isset($brepeticoes8)) echo $brepeticoes8 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="bseries8" id="comptreino" value="<?php if(isset($bseries8)) echo $bseries8 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="bexercicio8" id="comptreino" value="<?php if(isset($bexercicio8)) echo '  '.$bexercicio8 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="brepeticoes8" id="comptreino" value="<?php if(isset($brepeticoes8)) echo '  '.$brepeticoes8 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="bseries8" id="comptreino" value="<?php if(isset($bseries8)) echo '  '.$bseries8 ?>" placeholder="  Séries" disabled>
             </div>
             <div id="right" class="container">
                 <div>
                     <label style="font-weight: bold;" for="">Treino C</label>
                 </div>
-                <input type="text" name="cexercicio1" id="comptreino" value="<?php if(isset($cexercicio1)) echo $cexercicio1 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes1" id="comptreino" value="<?php if(isset($crepeticoes1)) echo $crepeticoes1 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries1" id="comptreino" value="<?php if(isset($cseries1)) echo $cseries1 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio1" id="comptreino" value="<?php if(isset($cexercicio1)) echo '  '.$cexercicio1 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes1" id="comptreino" value="<?php if(isset($crepeticoes1)) echo '  '.$crepeticoes1 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries1" id="comptreino" value="<?php if(isset($cseries1)) echo '  '.$cseries1 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio2" id="comptreino" value="<?php if(isset($cexercicio2)) echo $cexercicio2 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes2" id="comptreino" value="<?php if(isset($crepeticoes2)) echo $crepeticoes2 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries2" id="comptreino" value="<?php if(isset($cseries2)) echo $cseries2 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio2" id="comptreino" value="<?php if(isset($cexercicio2)) echo '  '.$cexercicio2 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes2" id="comptreino" value="<?php if(isset($crepeticoes2)) echo '  '.$crepeticoes2 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries2" id="comptreino" value="<?php if(isset($cseries2)) echo '  '.$cseries2 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio3" id="comptreino" value="<?php if(isset($cexercicio3)) echo $cexercicio3 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes3" id="comptreino" value="<?php if(isset($crepeticoes3)) echo $crepeticoes3 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries3" id="comptreino" value="<?php if(isset($cseries3)) echo $cseries3 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio3" id="comptreino" value="<?php if(isset($cexercicio3)) echo '  '.$cexercicio3 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes3" id="comptreino" value="<?php if(isset($crepeticoes3)) echo '  '.$crepeticoes3 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries3" id="comptreino" value="<?php if(isset($cseries3)) echo '  '.$cseries3 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio4" id="comptreino" value="<?php if(isset($cexercicio4)) echo $cexercicio4 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes4" id="comptreino" value="<?php if(isset($crepeticoes4)) echo $crepeticoes4 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries4" id="comptreino" value="<?php if(isset($cseries4)) echo $cseries4 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio4" id="comptreino" value="<?php if(isset($cexercicio4)) echo '  '.$cexercicio4 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes4" id="comptreino" value="<?php if(isset($crepeticoes4)) echo '  '.$crepeticoes4 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries4" id="comptreino" value="<?php if(isset($cseries4)) echo '  '.$cseries4 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio5" id="comptreino" value="<?php if(isset($cexercicio5)) echo $cexercicio5 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes5" id="comptreino" value="<?php if(isset($crepeticoes5)) echo $crepeticoes5 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries5" id="comptreino" value="<?php if(isset($cseries5)) echo $cseries5 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio5" id="comptreino" value="<?php if(isset($cexercicio5)) echo '  '.$cexercicio5 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes5" id="comptreino" value="<?php if(isset($crepeticoes5)) echo '  '.$crepeticoes5 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries5" id="comptreino" value="<?php if(isset($cseries5)) echo '  '.$cseries5 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio6" id="comptreino" value="<?php if(isset($cexercicio6)) echo $cexercicio6 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes6" id="comptreino" value="<?php if(isset($crepeticoes6)) echo $crepeticoes6 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries6" id="comptreino" value="<?php if(isset($cseries6)) echo $cseries6 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio6" id="comptreino" value="<?php if(isset($cexercicio6)) echo '  '.$cexercicio6 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes6" id="comptreino" value="<?php if(isset($crepeticoes6)) echo '  '.$crepeticoes6 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries6" id="comptreino" value="<?php if(isset($cseries6)) echo '  '.$cseries6 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio7" id="comptreino" value="<?php if(isset($cexercicio7)) echo $cexercicio7 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes7" id="comptreino" value="<?php if(isset($crepeticoes7)) echo $crepeticoes7 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries7" id="comptreino" value="<?php if(isset($cseries7)) echo $cseries7 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio7" id="comptreino" value="<?php if(isset($cexercicio7)) echo '  '.$cexercicio7 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes7" id="comptreino" value="<?php if(isset($crepeticoes7)) echo '  '.$crepeticoes7 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries7" id="comptreino" value="<?php if(isset($cseries7)) echo '  '.$cseries7 ?>" placeholder="  Séries" disabled>
 
-                <input type="text" name="cexercicio8" id="comptreino" value="<?php if(isset($cexercicio8)) echo $cexercicio8 ?>" placeholder="  Exercicio" disabled>
-                <input type="text" name="crepeticoes8" id="comptreino" value="<?php if(isset($crepeticoes8)) echo $crepeticoes8 ?>" placeholder="  Repetições" disabled>
-                <input type="text" name="cseries8" id="comptreino" value="<?php if(isset($cseries8)) echo $cseries8 ?>" placeholder="  Séries" disabled>
+                <input type="text" name="cexercicio8" id="comptreino" value="<?php if(isset($cexercicio8)) echo '  '.$cexercicio8 ?>" placeholder="  Exercicio" disabled>
+                <input type="text" name="crepeticoes8" id="comptreino" value="<?php if(isset($crepeticoes8)) echo '  '.$crepeticoes8 ?>" placeholder="  Repetições" disabled>
+                <input type="text" name="cseries8" id="comptreino" value="<?php if(isset($cseries8)) echo '  '.$cseries8 ?>" placeholder="  Séries" disabled>
             </div>
         </div>
     </form>
